@@ -50,7 +50,7 @@ def load(name: str, key: str):
 def write(filename: str, header: list[str], rows: list[list]) -> None:
     path = OUT / filename
     with path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.writer(fh)
+        writer = csv.writer(fh, lineterminator="\n")
         writer.writerow(header)
         writer.writerows(rows)
     print(f"  {path.relative_to(ROOT)} — {len(rows)} rows")
