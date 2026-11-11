@@ -1,6 +1,6 @@
-# Solidian Pay — Risk Register
+# Solidian Pay: Risk Register
 # Scoring: Likelihood (1-5) x Impact (1-5) = Score. Heat map and treatment plan
-# are derived from this file — see /dashboards and /workbook.
+# are derived from this file: see /dashboards and /workbook.
 
 schema_version: "2.0"
 

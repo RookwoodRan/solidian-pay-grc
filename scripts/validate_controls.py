@@ -12,7 +12,7 @@ Checks, in order:
 Framework identifier sets below are transcribed from:
   ISO/IEC 27001:2022   clauses 4-10 and Annex A (93 controls)
   ISO/IEC 42001:2023   clauses 4-10 and Annex A (38 controls)
-  AICPA Trust Services Criteria (2017, 2022 points of focus) — 61 criteria
+  AICPA Trust Services Criteria (2017, 2022 points of focus); 61 criteria
   NIST AI RMF 1.0      72 subcategories
   NIST CSF 2.0         106 subcategories
 
@@ -127,7 +127,7 @@ TYPES = {"Preventive", "Detective", "Corrective"}
 
 # Two language checks, deliberately scoped differently.
 #
-# STALE: artefacts of earlier revisions that must not survive anywhere — a
+# STALE: artefacts of earlier revisions that must not survive anywhere: a
 # dropped framework, an old version label, or a coverage claim the repository
 # no longer makes.
 STALE = re.compile(
@@ -142,7 +142,7 @@ STALE = re.compile(
 # OVERCLAIM: phrases that would misrepresent what this repository is. These are
 # only wrong in the project's own voice. Inside docs/rfi-rfp/ the same words are
 # fictional procurement content spoken by Solidian Pay or a bidding vendor, and
-# in the maturity rubric "audit-ready" is a definition of a maturity level — so
+# in the maturity rubric "audit-ready" is a definition of a maturity level: so
 # those paths are scanned for STALE only.
 OVERCLAIM = re.compile(
     r"audit[- ]ready|certified (?:to|against)|guarantee[sd]? certification"

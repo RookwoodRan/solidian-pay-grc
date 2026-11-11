@@ -1,4 +1,4 @@
-# Solidian Pay — Logging & Monitoring policy-as-code
+# Solidian Pay: Logging & Monitoring policy-as-code
 # Maps to: CTL-010 (Logging & Security Monitoring)
 # Frameworks: SOC 2 CC7.2 | ISO 27001 A.8.15/A.8.16 | ISO 42001 A.6.2.8 | NIST CSF DE.CM-01/DE.CM-09
 #
@@ -39,5 +39,5 @@ deny_reason contains msg if {
 deny_reason contains msg if {
 	input.classification == "Restricted"
 	input.retention_days < 365
-	msg := sprintf("asset %s classified Restricted has %d-day retention — minimum is 365 days (CTL-010)", [input.asset_id, input.retention_days])
+	msg := sprintf("asset %s classified Restricted has %d-day retention; minimum is 365 days (CTL-010)", [input.asset_id, input.retention_days])
 }

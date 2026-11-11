@@ -1,4 +1,4 @@
-# Solidian Pay — AI System Inventory
+# Solidian Pay: AI System Inventory
 # Aligned to ISO/IEC 42001 Annex A.4.2 (resource documentation) and NIST AI RMF
 # GOVERN 1.6 / MAP 1.1 / MAP 5.1
 
@@ -12,7 +12,7 @@ ai_systems:
     risk_level: High
     data_inputs: ["Transaction data", "Device fingerprint", "Historical account behavior"]
     data_outputs: ["Fraud risk score (0-100)"]
-    human_oversight: HITL — analyst review required above risk threshold
+    human_oversight: HITL; analyst review required above risk threshold
     monitoring: ["Drift detection", "Accuracy tracking", "Fairness metrics (CTL-015)"]
     third_party: false
     lifecycle_stage: Production
@@ -27,7 +27,7 @@ ai_systems:
     risk_level: High
     data_inputs: ["Credit bureau data", "Business financials", "Transaction history"]
     data_outputs: ["Decision recommendation + rationale"]
-    human_oversight: HOTL — underwriter approves all declines and high-value approvals
+    human_oversight: HOTL; underwriter approves all declines and high-value approvals
     monitoring: ["Threshold monitoring", "Quarterly disparate-impact review"]
     third_party: false
     lifecycle_stage: Production
@@ -42,7 +42,7 @@ ai_systems:
     risk_level: High
     data_inputs: ["Government ID images", "Proof-of-address documents"]
     data_outputs: ["Extracted fields", "Anomaly/fraud flags"]
-    human_oversight: HITL — all flagged and a sample of unflagged cases reviewed by compliance analyst
+    human_oversight: HITL; all flagged and a sample of unflagged cases reviewed by compliance analyst
     monitoring: ["False-negative sampling audit", "Extraction accuracy tracking"]
     third_party: false
     lifecycle_stage: Production
@@ -57,7 +57,7 @@ ai_systems:
     risk_level: Medium
     data_inputs: ["Customer chat/ticket text"]
     data_outputs: ["Suggested response drafts", "Case summaries"]
-    human_oversight: Post-hoc — agent reviews and edits before sending; no auto-send
+    human_oversight: Post-hoc; agent reviews and edits before sending; no auto-send
     monitoring: ["Response quality sampling", "PII leakage scanning"]
     third_party: true
     vendor: External foundation-model provider (see AS-011)
@@ -73,7 +73,7 @@ ai_systems:
     risk_level: Low
     data_inputs: ["Source code", "Code comments"]
     data_outputs: ["Code suggestions"]
-    human_oversight: None required — developer reviews all suggestions before commit (standard code review)
+    human_oversight: None required; developer reviews all suggestions before commit (standard code review)
     monitoring: ["License/IP scanning of suggested code"]
     third_party: true
     vendor: External foundation-model provider (see AS-011)
@@ -89,7 +89,7 @@ ai_systems:
     risk_level: Low
     data_inputs: ["Alert metadata", "Case text"]
     data_outputs: ["Routing decision", "Priority label"]
-    human_oversight: None required — misrouted items are self-correcting via queue re-triage
+    human_oversight: None required; misrouted items are self-correcting via queue re-triage
     monitoring: ["Routing accuracy sampling"]
     third_party: false
     lifecycle_stage: Pilot

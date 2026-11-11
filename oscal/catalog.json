@@ -2,11 +2,11 @@
   "catalog": {
     "uuid": "0768f25b-b1ad-5a21-ae5f-058f48699517",
     "metadata": {
-      "title": "Solidian Pay Financial Technologies, Inc. \u2014 Unified Control Catalog",
-      "last-modified": "2026-11-11T01:10:47.279195+00:00",
+      "title": "Solidian Pay Financial Technologies, Inc.: Unified Control Catalog",
+      "last-modified": "2026-11-11T02:36:00.548378+00:00",
       "version": "2.0.0",
       "oscal-version": "1.1.2",
-      "remarks": "Fictional portfolio artifact. Controls are crosswalked to the AICPA SOC 2 Trust Services Criteria across all five categories (Security, Availability, Confidentiality, Processing Integrity, Privacy), and to ISO/IEC 27001:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 and NIST CSF 2.0 \u2014 see props of class 'framework-mapping' on each control for the crosswalk, and props named 'soc2-category' for the Trust Services Criteria category each SOC 2 criterion belongs to. A reference is recorded only where the control itself satisfies it; controls are left unmapped against frameworks they do not address.",
+      "remarks": "Fictional portfolio artifact. Controls are crosswalked to the AICPA SOC 2 Trust Services Criteria across all five categories (Security, Availability, Confidentiality, Processing Integrity, Privacy), and to ISO/IEC 27001:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 and NIST CSF 2.0; see props of class 'framework-mapping' on each control for the crosswalk, and props named 'soc2-category' for the Trust Services Criteria category each SOC 2 criterion belongs to. A reference is recorded only where the control itself satisfies it; controls are left unmapped against frameworks they do not address.",
       "parties": [
         {
           "uuid": "7974f218-766d-5d68-8575-5b47bf158810",
@@ -3743,7 +3743,7 @@
               {
                 "id": "ctl-022_smt",
                 "name": "statement",
-                "prose": "Maintains accurate, accessible privacy notices describing the purposes for which personal information is collected, used, retained and disclosed; captures and honours choice and consent \u2014 including explicit consent for sensitive information \u2014 for processing of personal data, including data used in AI training and inference."
+                "prose": "Maintains accurate, accessible privacy notices describing the purposes for which personal information is collected, used, retained and disclosed; captures and honours choice and consent; including explicit consent for sensitive information; for processing of personal data, including data used in AI training and inference."
               },
               {
                 "id": "ctl-022_gdn",
@@ -4148,7 +4148,7 @@
               {
                 "id": "ctl-025_smt",
                 "name": "statement",
-                "prose": "Governs disclosure of personal information to third parties: disclosures are made only for disclosed purposes and with consent where required, are recorded (including unauthorized disclosures), are covered by contractual privacy commitments, and \u2014 for transfers between the US, Canada and UK operations and to third-party AI providers \u2014 are supported by a documented legal basis and transfer safeguards."
+                "prose": "Governs disclosure of personal information to third parties: disclosures are made only for disclosed purposes and with consent where required, are recorded (including unauthorized disclosures), are covered by contractual privacy commitments, and; for transfers between the US, Canada and UK operations and to third-party AI providers; are supported by a documented legal basis and transfer safeguards."
               },
               {
                 "id": "ctl-025_gdn",
@@ -4975,7 +4975,7 @@
               {
                 "id": "ctl-036_smt",
                 "name": "statement",
-                "prose": "Formally considers the potential for fraud \u2014 both external transaction fraud and internal fraud/misappropriation \u2014 in assessing risks to objectives, including fraud scenarios arising from AI-assisted decisioning and from management override of controls."
+                "prose": "Formally considers the potential for fraud; both external transaction fraud and internal fraud/misappropriation; in assessing risks to objectives, including fraud scenarios arising from AI-assisted decisioning and from management override of controls."
               },
               {
                 "id": "ctl-036_gdn",

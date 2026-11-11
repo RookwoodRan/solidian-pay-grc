@@ -12,7 +12,7 @@
 | **Company** | Solidian Pay Financial Technologies, Inc. |
 | **Primary Contact** | procurement@solidianpay.example |
 | **Procurement Type** | Professional services for AI management system implementation and certification support |
-| **Target Standard** | ISO/IEC 42001:2023 — Artificial Intelligence Management System |
+| **Target Standard** | ISO/IEC 42001:2023; Artificial Intelligence Management System |
 
 ## 1. Purpose and intent
 
@@ -36,12 +36,12 @@ The selected proposer will not be the entity that awards certification unless it
 
 | Phase | Required activities |
 |---|---|
-| Phase 1 — Mobilization and current-state assessment | Confirm project governance, identify stakeholders, finalize AIMS scope, document review and interviews, assess current capability against ISO/IEC 42001, deliver prioritized gap assessment |
-| Phase 2 — AIMS design and documentation | Develop/refine policy, scope statement, objectives, governance model, documented procedures, records framework, roles and responsibilities, management-review inputs, competence/awareness materials, document-control ownership |
-| Phase 3 — Risk and control implementation | Establish AI inventory and classification approach; support AI risk assessment, AI system impact assessment and treatment planning; define lifecycle, monitoring, incident, transparency, third-party oversight, data, and human-oversight controls; align evidence expectations |
-| Phase 4 — Enablement and operationalization | Train control owners, run working sessions, embed management reviews and reporting, define metrics/KPIs, support pilot operation |
-| Phase 5 — Internal audit and corrective action support | Plan and execute internal audit / audit-ready package, document findings, support root-cause analysis, corrective actions, closure evidence |
-| Phase 6 — Certification readiness and external audit support | Prepare for Stage 1/Stage 2 activities, coordinate evidence requests, facilitate mock interviews, support remediation, assist during certification-body interactions |
+| Phase 1; Mobilization and current-state assessment | Confirm project governance, identify stakeholders, finalize AIMS scope, document review and interviews, assess current capability against ISO/IEC 42001, deliver prioritized gap assessment |
+| Phase 2; AIMS design and documentation | Develop/refine policy, scope statement, objectives, governance model, documented procedures, records framework, roles and responsibilities, management-review inputs, competence/awareness materials, document-control ownership |
+| Phase 3; Risk and control implementation | Establish AI inventory and classification approach; support AI risk assessment, AI system impact assessment and treatment planning; define lifecycle, monitoring, incident, transparency, third-party oversight, data, and human-oversight controls; align evidence expectations |
+| Phase 4; Enablement and operationalization | Train control owners, run working sessions, embed management reviews and reporting, define metrics/KPIs, support pilot operation |
+| Phase 5; Internal audit and corrective action support | Plan and execute internal audit / audit-ready package, document findings, support root-cause analysis, corrective actions, closure evidence |
+| Phase 6; Certification readiness and external audit support | Prepare for Stage 1/Stage 2 activities, coordinate evidence requests, facilitate mock interviews, support remediation, assist during certification-body interactions |
 
 ## 4. Specific deliverables
 
@@ -61,7 +61,7 @@ The selected proposer will not be the entity that awards certification unless it
 
 - Describe your proposed approach, methods, tools, assumptions, and required client inputs for each phase.
 - Provide a proposed project plan with estimated duration, milestones, and critical dependencies.
-- Identify the engagement team, roles, credentials, and level of effort by phase — clearly distinguishing implementation resources from any internal audit / independent review resources.
+- Identify the engagement team, roles, credentials, and level of effort by phase; clearly distinguishing implementation resources from any internal audit / independent review resources.
 - Explain your experience with AI governance in fintech, banking, payments, insurance, or adjacent regulated sectors.
 - Provide at least three comparable references and summarize outcomes achieved.
 - State all assumptions, exclusions, and optional items; list any third-party software or licenses required.

@@ -2,8 +2,8 @@
   "system-security-plan": {
     "uuid": "fa780feb-48e1-5e5c-8d5a-7cc55c2b0dac",
     "metadata": {
-      "title": "Solidian Pay Financial Technologies, Inc. \u2014 System Security Plan (Solidian Pay Platform)",
-      "last-modified": "2026-11-11T01:10:47.279421+00:00",
+      "title": "Solidian Pay Financial Technologies, Inc.: System Security Plan (Solidian Pay Platform)",
+      "last-modified": "2026-11-11T02:36:00.548644+00:00",
       "version": "2.0.0",
       "oscal-version": "1.1.2"
     },
@@ -547,7 +547,7 @@
         {
           "uuid": "b5b7002c-abad-5269-b552-16a2505e92f6",
           "control-id": "ctl-022",
-          "description": "Maintains accurate, accessible privacy notices describing the purposes for which personal information is collected, used, retained and disclosed; captures and honours choice and consent \u2014 including explicit consent for sensitive information \u2014 for processing of personal data, including data used in AI training and inference.",
+          "description": "Maintains accurate, accessible privacy notices describing the purposes for which personal information is collected, used, retained and disclosed; captures and honours choice and consent; including explicit consent for sensitive information; for processing of personal data, including data used in AI training and inference.",
           "props": [
             {
               "name": "implementation-status",
@@ -616,7 +616,7 @@
         {
           "uuid": "0a6e5e33-eff4-5aa2-a09b-f9fe99857f51",
           "control-id": "ctl-025",
-          "description": "Governs disclosure of personal information to third parties: disclosures are made only for disclosed purposes and with consent where required, are recorded (including unauthorized disclosures), are covered by contractual privacy commitments, and \u2014 for transfers between the US, Canada and UK operations and to third-party AI providers \u2014 are supported by a documented legal basis and transfer safeguards.",
+          "description": "Governs disclosure of personal information to third parties: disclosures are made only for disclosed purposes and with consent where required, are recorded (including unauthorized disclosures), are covered by contractual privacy commitments, and; for transfers between the US, Canada and UK operations and to third-party AI providers; are supported by a documented legal basis and transfer safeguards.",
           "props": [
             {
               "name": "implementation-status",
@@ -869,7 +869,7 @@
         {
           "uuid": "79c0eae6-1a32-5990-9054-d4704cfa4a2e",
           "control-id": "ctl-036",
-          "description": "Formally considers the potential for fraud \u2014 both external transaction fraud and internal fraud/misappropriation \u2014 in assessing risks to objectives, including fraud scenarios arising from AI-assisted decisioning and from management override of controls.",
+          "description": "Formally considers the potential for fraud; both external transaction fraud and internal fraud/misappropriation; in assessing risks to objectives, including fraud scenarios arising from AI-assisted decisioning and from management override of controls.",
           "props": [
             {
               "name": "implementation-status",

@@ -1,4 +1,4 @@
-# Solidian Pay — Asset Inventory
+# Solidian Pay: Asset Inventory
 # Source of truth. IDs referenced by data/risks.yaml and the workbook.
 
 schema_version: "2.0"

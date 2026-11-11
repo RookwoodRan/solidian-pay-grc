@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0 — October 2026
+## 2.0: October 2026
 
 A full rebuild. Version 1.0 was a single spreadsheet; this version is a small governance-engineering system generated from structured data.
 
@@ -28,6 +28,6 @@ A full rebuild. Version 1.0 was a single spreadsheet; this version is a small go
 - The RFI/RFP procurement lifecycle was rebuilt with a corrected timeline, keeping the certification-body independence reasoning from 1.0.
 - Added an explicit scope-and-limitations section: this is a control design and mapping artifact, not an audit, and it contains no operating-effectiveness testing.
 
-## 1.0 — April 2026
+## 1.0: April 2026
 
 Initial publication. A single Excel workbook for a fictional fintech company: eight controls mapped to ISO/IEC 27001 and ISO/IEC 42001, an asset inventory, an AI system inventory, a risk register with inherent and residual scoring, a certification-readiness tracker, and an RFI/RFP vendor-selection lifecycle for an ISO 42001 certification partner.

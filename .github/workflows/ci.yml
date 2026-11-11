@@ -3,10 +3,10 @@ name: CI
 # Runs on every push and pull request to main, and can be triggered by hand
 # from the Actions tab. Three things are checked:
 #
-#   1. the control library validates     — every framework reference is a real
+#   1. the control library validates    : every framework reference is a real
 #                                          identifier, cross-references resolve
-#   2. the policies pass their tests     — opa test over policy/
-#   3. the generated artifacts are fresh — regenerating from data/ reproduces
+#   2. the policies pass their tests    : opa test over policy/
+#   3. the generated artifacts are fresh: regenerating from data/ reproduces
 #                                          exactly what is committed
 #
 # Check 3 is the one that matters most for this repository: it proves that the
@@ -87,14 +87,14 @@ jobs:
           # generated locally, which is not the commit date, so exclude the
           # metadata timestamp from the comparison and diff everything else.
           git diff --exit-code --stat -- exports/ || {
-            echo "::error::exports/ is stale — run scripts/export_csv.py and commit the result"
+            echo "::error::exports/ is stale; run scripts/export_csv.py and commit the result"
             git diff -- exports/
             exit 1
           }
           if ! git diff --quiet -- oscal/; then
             if git diff -U0 -- oscal/ | grep -E '^[+-]' | grep -v '^[+-][+-]' \
                  | grep -vE '"last-modified"' | grep -q .; then
-              echo "::error::oscal/ is stale — run oscal/generate_oscal.py and commit the result"
+              echo "::error::oscal/ is stale; run oscal/generate_oscal.py and commit the result"
               git diff -- oscal/
               exit 1
             fi

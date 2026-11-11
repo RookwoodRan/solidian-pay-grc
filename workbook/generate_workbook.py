@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generates the Solidian Pay Compliance, Risk & AI Governance workbook from the
-YAML source-of-truth files in /data. Do not hand-edit the .xlsx — edit the
+YAML source-of-truth files in /data. Do not hand-edit the .xlsx; edit the
 YAML and re-run this script, then recalculate the output with LibreOffice (see
 the README) so the formulas carry cached values.
 
@@ -91,7 +91,7 @@ def write_table(ws, start_row, headers, rows):
 
 
 def join_mapping(refs):
-    return "; ".join(refs) if refs else "—"
+    return "; ".join(refs) if refs else "None"
 
 
 def main():
@@ -113,7 +113,7 @@ def main():
     ws["B3"] = "Compliance, Risk & AI Governance Suite"
     ws["B3"].font = Font(name=FONT_NAME, size=13, color="595959")
     ws["B5"] = (
-        "**FICTIONAL PORTFOLIO ARTIFACT** — Solidian Pay is a fictional fintech company "
+        "**FICTIONAL PORTFOLIO ARTIFACT**; Solidian Pay is a fictional fintech company "
         "created by Rani Rookwood to demonstrate GRC and GRC-engineering skills. It is not "
         "a real organization. All data, personnel, and events in this suite are fictional."
     )
@@ -123,7 +123,7 @@ def main():
     ws.row_dimensions[5].height = 40
 
     fields = [
-        ("Author", "Rani Rookwood — AI Trust & Safety / GRC & AI Governance"),
+        ("Author", "Rani Rookwood; AI Trust & Safety / GRC & AI Governance"),
         ("Version", "2.0"),
         ("Date", datetime.date.today().isoformat()),
         ("Frameworks Mapped", "SOC 2 Trust Services Criteria (all five categories), ISO/IEC 27001:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0, NIST CSF 2.0"),
@@ -308,7 +308,7 @@ def main():
 
     # ---------------- SOC 2 TSC Crosswalk ----------------
     ws = wb.create_sheet("SOC 2 TSC Crosswalk")
-    ws.cell(row=1, column=1, value="SOC 2 Trust Services Criteria — Crosswalk by Category").font = TITLE_FONT
+    ws.cell(row=1, column=1, value="SOC 2 Trust Services Criteria: Crosswalk by Category").font = TITLE_FONT
     ws.merge_cells("A1:D1")
     ws.cell(row=2, column=1, value=(
         "Counts read live from the Certification Readiness Tracker. One line item = one "
@@ -340,12 +340,12 @@ def main():
         ws.cell(row=r, column=3, value=len(distinct_by_cat.get(label, set()))).font = BODY_FONT
         ws.cell(row=r, column=4,
                 value=f"=IFERROR(AVERAGEIFS('Certification Readiness Tracker'!I2:I{cert_last_row},"
-                      f"'Certification Readiness Tracker'!C2:C{cert_last_row},A{r}),\"—\")"
+                      f"'Certification Readiness Tracker'!C2:C{cert_last_row},A{r}),\"n/a\")"
                 ).font = BODY_FONT
         for col in range(1, 5):
             ws.cell(row=r, column=col).border = BORDER
         r += 1
-    ws.cell(row=r, column=1, value="TOTAL — SOC 2 crosswalk rows").font = SECTION_FONT
+    ws.cell(row=r, column=1, value="TOTAL: SOC 2 crosswalk rows").font = SECTION_FONT
     ws.cell(row=r, column=2,
             value=f"=COUNTIF('Certification Readiness Tracker'!A2:A{cert_last_row},\"SOC 2\")"
             ).font = SECTION_FONT
@@ -354,7 +354,7 @@ def main():
 
     # ---------------- Dashboard ----------------
     ws = wb.create_sheet("Dashboard")
-    ws.cell(row=1, column=1, value=f"{org} — Governance Posture Dashboard").font = TITLE_FONT
+    ws.cell(row=1, column=1, value=f"{org}: Governance Posture Dashboard").font = TITLE_FONT
     ws.merge_cells("A1:D1")
 
     sections = [
@@ -403,7 +403,7 @@ def main():
         r += 1
     autofit(ws, [40, 16])
     ws.cell(row=r, column=1, value=(
-        "Note: this dashboard reads live from the sheets above via formulas — "
+        "Note: this dashboard reads live from the sheets above via formulas; "
         "regenerating the workbook from /data keeps every number in sync."
     )).font = NOTE_FONT
 

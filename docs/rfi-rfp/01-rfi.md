@@ -12,7 +12,7 @@
 | **Company** | Solidian Pay Financial Technologies, Inc. |
 | **Primary Contact** | procurement@solidianpay.example |
 | **Procurement Type** | Professional services for AI management system implementation and certification support |
-| **Target Standard** | ISO/IEC 42001:2023 — Artificial Intelligence Management System |
+| **Target Standard** | ISO/IEC 42001:2023; Artificial Intelligence Management System |
 
 ## 1. Procurement overview
 
@@ -51,7 +51,7 @@ This RFI gathers information about vendor capabilities, delivery models, relevan
 | Artefacts and accelerators | Templates, control libraries, annex mapping tools, training content, risk registers, internal audit workpapers, dashboards |
 | Certification support boundary | How you support readiness without impairing certification independence; coordination with accredited certification bodies |
 | Commercial model | Indicative pricing, rate cards, milestone options, travel assumptions, tool/license costs |
-| References | At least three references — industry, scope, duration, contact information if available |
+| References | At least three references; industry, scope, duration, contact information if available |
 
 ## 5. Key procurement questions
 
@@ -71,7 +71,7 @@ This RFI gathers information about vendor capabilities, delivery models, relevan
 
 - Solidian Pay expects the selected partner to work collaboratively with legal, risk, privacy, security, engineering, data science, product, compliance, and internal audit stakeholders.
 - The company prefers an implementation approach that leverages existing governance structures rather than a standalone process stack.
-- The engagement may require mapping AI governance activities to adjacent frameworks already familiar to the company — security controls, model-risk concepts, privacy requirements, and regulatory obligations.
+- The engagement may require mapping AI governance activities to adjacent frameworks already familiar to the company; security controls, model-risk concepts, privacy requirements, and regulatory obligations.
 - Some AI use cases are high-sensitivity: they may influence fraud decisions, onboarding outcomes, customer interactions, or regulatory operations.
 
 ## 7. Response instructions

@@ -1,7 +1,7 @@
-# Solidian Pay — Unified Control Library
+# Solidian Pay: Unified Control Library
 # Source of truth for the GRC & AI Governance Suite. Every other artifact
 # (OSCAL catalog, Rego policies, the workbook, dashboards) is generated FROM
-# this file — do not hand-edit downstream copies.
+# this file: do not hand-edit downstream copies.
 #
 # Framework key:
 #   soc2        -> AICPA SOC 2 Trust Services Criteria (TSP section 100, 2017
@@ -23,7 +23,7 @@
 #
 # Mapping rule: a framework reference is recorded only where the control
 # description itself satisfies that clause, control or criterion. Controls are
-# deliberately left unmapped against frameworks they do not genuinely address —
+# deliberately left unmapped against frameworks they do not genuinely address:
 # a control with no AI-specific function carries no AI RMF or ISO 42001
 # reference.
 #
@@ -487,8 +487,8 @@ controls:
     description: >
       Maintains accurate, accessible privacy notices describing the purposes
       for which personal information is collected, used, retained and
-      disclosed; captures and honours choice and consent — including explicit
-      consent for sensitive information — for processing of personal data,
+      disclosed; captures and honours choice and consent; including explicit
+      consent for sensitive information; for processing of personal data,
       including data used in AI training and inference.
     control_type: Preventive
     owner: Privacy Office
@@ -555,8 +555,8 @@ controls:
       Governs disclosure of personal information to third parties: disclosures
       are made only for disclosed purposes and with consent where required,
       are recorded (including unauthorized disclosures), are covered by
-      contractual privacy commitments, and — for transfers between the US,
-      Canada and UK operations and to third-party AI providers — are supported
+      contractual privacy commitments, and; for transfers between the US,
+      Canada and UK operations and to third-party AI providers; are supported
       by a documented legal basis and transfer safeguards.
     control_type: Preventive
     owner: Legal / Privacy Office
@@ -799,8 +799,8 @@ controls:
     name: Fraud Risk Assessment
     domain: Processing Integrity
     description: >
-      Formally considers the potential for fraud — both external transaction
-      fraud and internal fraud/misappropriation — in assessing risks to
+      Formally considers the potential for fraud; both external transaction
+      fraud and internal fraud/misappropriation; in assessing risks to
       objectives, including fraud scenarios arising from AI-assisted
       decisioning and from management override of controls.
     control_type: Preventive

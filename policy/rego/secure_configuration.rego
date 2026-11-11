@@ -1,4 +1,4 @@
-# Solidian Pay — Secure Configuration policy-as-code
+# Solidian Pay: Secure Configuration policy-as-code
 # Maps to: CTL-008 (Secure Configuration & Boundary Protection), CTL-028 (Encryption & Secure Data Transmission)
 # Frameworks: SOC 2 CC5.2/CC6.6/CC6.7/CC7.1 | ISO 27001 A.8.9/A.8.24 | NIST CSF PR.PS-01/PR.DS-01/PR.DS-02
 #

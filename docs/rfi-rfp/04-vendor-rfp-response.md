@@ -1,6 +1,6 @@
-# Vendor Response — Request for Proposal (RFP)
+# Vendor Response: Request for Proposal (RFP)
 
-**Solidian Pay Financial Technologies, Inc. — Vendor Proposal Response Template**
+**Solidian Pay Financial Technologies, Inc.; Vendor Proposal Response Template**
 
 Submitted by **Epictetus Assurance, Ltd.** as an independence-preserving proposal for Solidian Pay's ISO/IEC 42001:2023 certification-readiness and certification scope.
 
@@ -10,7 +10,7 @@ Submitted by **Epictetus Assurance, Ltd.** as an independence-preserving proposa
 |---|---|
 | Procurement reference | SP-RFP-42001-RESP |
 | Company | Solidian Pay Financial Technologies, Inc. |
-| Standard | ISO/IEC 42001:2023 — Artificial Intelligence Management System |
+| Standard | ISO/IEC 42001:2023; Artificial Intelligence Management System |
 
 ## 1. Proposer information
 
@@ -25,7 +25,7 @@ Submitted by **Epictetus Assurance, Ltd.** as an independence-preserving proposa
 
 ## 2. Proposal summary
 
-Epictetus Assurance proposes an assurance-led path that gives Solidian Pay a credible, efficient route to ISO/IEC 42001 certification while preserving the impartiality required of a certification body. Our value is not drafting policies on Solidian Pay's behalf — it is showing Solidian Pay exactly what an auditor and certification decision panel will require, early enough to avoid rework, delays, and avoidable nonconformities.
+Epictetus Assurance proposes an assurance-led path that gives Solidian Pay a credible, efficient route to ISO/IEC 42001 certification while preserving the impartiality required of a certification body. Our value is not drafting policies on Solidian Pay's behalf; it is showing Solidian Pay exactly what an auditor and certification decision panel will require, early enough to avoid rework, delays, and avoidable nonconformities.
 
 We propose a six-phase program aligned to the RFP structure, executed as independent review checkpoints, evidence validation, readiness assessments, and certification activities. This model is especially strong for fintech environments because it concentrates effort on scope clarity, AI inventory accuracy, supplier oversight, model-risk evidence, management-review inputs, and sampled operating evidence across product, security, privacy, compliance, and operations teams. Where the RFP requests implementation support, our proposal responds with review-and-challenge services rather than authorship of the management system, which keeps Solidian Pay eligible for independent certification by Epictetus Assurance for the same scope.
 
@@ -44,12 +44,12 @@ We propose a six-phase program aligned to the RFP structure, executed as indepen
 
 | Phase | Proposed activities and methods | Key outputs | Estimated duration |
 |---|---|---|---|
-| Phase 1 — Mobilization and current-state assessment | Kickoff, scope workshop, AI inventory review, stakeholder mapping, document intake; produce an auditability heat map and confirm sampling logic for critical AI use cases | Mobilization deck, scope note, AI inventory review memo, current-state findings log | 2 weeks |
-| Phase 2 — AIMS design and documentation | Review AIMS design artefacts, governance forums, policy suite, documented-information register, and control applicability logic; annotated gap comments and closure criteria without drafting the documents | Document review memo, evidence requirements matrix, prioritized gap log | 3 weeks |
-| Phase 3 — Risk and control implementation | Assess performed risk assessments, AI system impact assessments, treatment plans, supplier oversight, monitoring evidence, change control, and incident-response records; sample objective evidence for sufficiency and traceability | Risk-and-control review findings, sampled evidence tracker, remediation priorities | 3 weeks |
-| Phase 4 — Enablement and operationalization | Run auditor-style briefing sessions for process owners, test interview readiness, verify operational adoption signals (approvals, exceptions, KPIs) | Interview guide, readiness workshop pack, updated open-item tracker | 2 weeks |
-| Phase 5 — Internal audit and management review readiness | Independently review internal-audit outputs, management-review inputs, corrective actions, and residual gaps against Stage 1/2 expectations | Readiness assessment report, mock nonconformity log, go/no-go recommendation | 2 weeks |
-| Phase 6 — Certification preparation and audit support | Execute Stage 1 document review, Stage 2 audit, corrective-action review, technical review, independent certification decision; coordinate surveillance planning after award | Stage 1 report, Stage 2 report, corrective-action review notes, certification recommendation package | 4–6 weeks |
+| Phase 1; Mobilization and current-state assessment | Kickoff, scope workshop, AI inventory review, stakeholder mapping, document intake; produce an auditability heat map and confirm sampling logic for critical AI use cases | Mobilization deck, scope note, AI inventory review memo, current-state findings log | 2 weeks |
+| Phase 2; AIMS design and documentation | Review AIMS design artefacts, governance forums, policy suite, documented-information register, and control applicability logic; annotated gap comments and closure criteria without drafting the documents | Document review memo, evidence requirements matrix, prioritized gap log | 3 weeks |
+| Phase 3; Risk and control implementation | Assess performed risk assessments, AI system impact assessments, treatment plans, supplier oversight, monitoring evidence, change control, and incident-response records; sample objective evidence for sufficiency and traceability | Risk-and-control review findings, sampled evidence tracker, remediation priorities | 3 weeks |
+| Phase 4; Enablement and operationalization | Run auditor-style briefing sessions for process owners, test interview readiness, verify operational adoption signals (approvals, exceptions, KPIs) | Interview guide, readiness workshop pack, updated open-item tracker | 2 weeks |
+| Phase 5; Internal audit and management review readiness | Independently review internal-audit outputs, management-review inputs, corrective actions, and residual gaps against Stage 1/2 expectations | Readiness assessment report, mock nonconformity log, go/no-go recommendation | 2 weeks |
+| Phase 6; Certification preparation and audit support | Execute Stage 1 document review, Stage 2 audit, corrective-action review, technical review, independent certification decision; coordinate surveillance planning after award | Stage 1 report, Stage 2 report, corrective-action review notes, certification recommendation package | 4–6 weeks |
 
 ## 5. Deliverables matrix
 
@@ -67,7 +67,7 @@ We propose a six-phase program aligned to the RFP structure, executed as indepen
 
 | Role | Named resource | Relevant credentials/experience | Estimated level of effort |
 |---|---|---|---|
-| Executive Sponsor | Marcus Ferrara, Managing Director — North America | 20 years in accredited management-system certification; former banking assurance partner | 0.10 FTE |
+| Executive Sponsor | Marcus Ferrara, Managing Director; North America | 20 years in accredited management-system certification; former banking assurance partner | 0.10 FTE |
 | Program Lead | Imogen Vasquez, VP Financial Services Certification | ISO/IEC 42001 and ISO/IEC 27001 Lead Auditor; specialist in payments and fintech operating models | 0.35 FTE |
 | ISO/IEC 42001 Lead | Dr. Ravi Nandakumar, Global ISO/IEC 42001 Practice Lead | Technical lead with ML and model-risk background; accountable for audit method, scope calibration, and evidence expectations | 0.30 FTE |
 | AI Risk/Governance SME | Claire DuBois, Principal AI Governance Assessor | Lead reviewer for AI risk, privacy, supplier governance, and responsible-AI evidence | 0.25 FTE |
@@ -132,6 +132,6 @@ Independence is preserved through client-acceptance conflict screening, separati
 | | |
 |---|---|
 | Authorized signatory name | Marcus Ferrara |
-| Title | Managing Director — North America |
+| Title | Managing Director; North America |
 | Signature | s/ Marcus Ferrara (electronic signature) |
 | Date | November 3, 2026 |

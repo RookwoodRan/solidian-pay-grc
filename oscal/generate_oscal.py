@@ -5,7 +5,7 @@ Generates OSCAL-format artifacts from data/controls.yaml:
   - oscal/ssp-excerpt.json  a System Security Plan excerpt with
                              implemented-requirements pointing back at the catalog
 
-This is the single generator for both files — do not hand-edit the JSON
+This is the single generator for both files; do not hand-edit the JSON
 outputs; edit data/controls.yaml and re-run this script.
 
 SOC 2 mappings carry an additional 'soc2-category' prop so the catalog is
@@ -151,7 +151,7 @@ def build_catalog(controls, org):
         "catalog": {
             "uuid": det_uuid("catalog"),
             "metadata": {
-                "title": f"{org} — Unified Control Catalog",
+                "title": f"{org}: Unified Control Catalog",
                 "last-modified": now_iso(),
                 "version": "2.0.0",
                 "oscal-version": "1.1.2",
@@ -160,7 +160,7 @@ def build_catalog(controls, org):
                     "SOC 2 Trust Services Criteria across all five categories (Security, "
                     "Availability, Confidentiality, Processing Integrity, Privacy), and "
                     "to ISO/IEC 27001:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 and "
-                    "NIST CSF 2.0 — see props of class 'framework-mapping' on each "
+                    "NIST CSF 2.0; see props of class 'framework-mapping' on each "
                     "control for the crosswalk, and props named 'soc2-category' for the "
                     "Trust Services Criteria category each SOC 2 criterion belongs to. "
                     "A reference is recorded only where the control itself satisfies it; "
@@ -204,7 +204,7 @@ def build_ssp(controls, org, catalog_uuid):
         "system-security-plan": {
             "uuid": det_uuid("ssp"),
             "metadata": {
-                "title": f"{org} — System Security Plan (Solidian Pay Platform)",
+                "title": f"{org}: System Security Plan (Solidian Pay Platform)",
                 "last-modified": now_iso(),
                 "version": "2.0.0",
                 "oscal-version": "1.1.2",
@@ -263,8 +263,8 @@ def main():
     SSP_OUT.write_text(json.dumps(ssp, indent=2) + "\n")
 
     n_controls = sum(len(g["controls"]) for g in catalog["catalog"]["groups"])
-    print(f"Wrote {CATALOG_OUT} — {len(catalog['catalog']['groups'])} groups, {n_controls} controls")
-    print(f"Wrote {SSP_OUT} — {len(ssp['system-security-plan']['control-implementation']['implemented-requirements'])} implemented-requirements")
+    print(f"Wrote {CATALOG_OUT}; {len(catalog['catalog']['groups'])} groups, {n_controls} controls")
+    print(f"Wrote {SSP_OUT}; {len(ssp['system-security-plan']['control-implementation']['implemented-requirements'])} implemented-requirements")
 
 
 if __name__ == "__main__":

@@ -81,7 +81,7 @@ test_deny_high_risk_third_party_missing_model_card if {
 	}
 }
 
-# CTL-038 — AI system impact assessment gate
+# CTL-038: AI system impact assessment gate
 
 test_deny_high_risk_missing_impact_assessment if {
 	not allow with input as {

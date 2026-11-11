@@ -4,7 +4,7 @@
 GitHub renders committed CSV files as a searchable, sortable table in the
 browser, so these are the copies a reviewer can read without downloading the
 workbook or cloning the repository. They are generated from data/*.yaml, the
-same source as the workbook and the OSCAL catalog — not from the .xlsx — so
+same source as the workbook and the OSCAL catalog, not from the .xlsx, so
 they cannot drift from it.
 
 Usage: python3 scripts/export_csv.py
@@ -53,7 +53,7 @@ def write(filename: str, header: list[str], rows: list[list]) -> None:
         writer = csv.writer(fh, lineterminator="\n")
         writer.writerow(header)
         writer.writerows(rows)
-    print(f"  {path.relative_to(ROOT)} — {len(rows)} rows")
+    print(f"  {path.relative_to(ROOT)}; {len(rows)} rows")
 
 
 def main() -> None:
