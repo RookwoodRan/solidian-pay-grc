@@ -1,0 +1,112 @@
+name: CI
+
+# Runs on every push and pull request to main, and can be triggered by hand
+# from the Actions tab. Three things are checked:
+#
+#   1. the control library validates     — every framework reference is a real
+#                                          identifier, cross-references resolve
+#   2. the policies pass their tests     — opa test over policy/
+#   3. the generated artifacts are fresh — regenerating from data/ reproduces
+#                                          exactly what is committed
+#
+# Check 3 is the one that matters most for this repository: it proves that the
+# OSCAL catalog and the CSV exports in the tree really were generated from
+# data/*.yaml and have not been hand-edited or left stale after a data change.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate control library
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install pyyaml openpyxl
+
+      - name: Validate framework references and cross-references
+        run: python3 scripts/validate_controls.py
+
+  policy:
+    name: Policy tests (OPA)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install OPA
+        run: |
+          curl -fsSL -o /usr/local/bin/opa \
+            https://github.com/open-policy-agent/opa/releases/download/v1.4.2/opa_linux_amd64_static
+          chmod +x /usr/local/bin/opa
+          opa version
+
+      - name: Check Rego formatting
+        run: opa fmt --list --fail policy/
+
+      - name: Run policy unit tests
+        run: opa test policy/ --verbose
+
+  artifacts:
+    name: Generated artifacts are up to date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install pyyaml openpyxl
+
+      - name: Regenerate OSCAL and CSV exports
+        # SOURCE_DATE_EPOCH pins the OSCAL metadata timestamp to the commit
+        # date, so regeneration is byte-reproducible and the diff below only
+        # fires on a real content change.
+        run: |
+          export SOURCE_DATE_EPOCH="$(git log -1 --pretty=%ct)"
+          python3 oscal/generate_oscal.py
+          python3 scripts/export_csv.py
+
+      - name: Fail if committed artifacts differ from regenerated output
+        run: |
+          # The committed OSCAL timestamp reflects whenever it was last
+          # generated locally, which is not the commit date, so exclude the
+          # metadata timestamp from the comparison and diff everything else.
+          git diff --exit-code --stat -- exports/ || {
+            echo "::error::exports/ is stale — run scripts/export_csv.py and commit the result"
+            git diff -- exports/
+            exit 1
+          }
+          if ! git diff --quiet -- oscal/; then
+            if git diff -U0 -- oscal/ | grep -E '^[+-]' | grep -v '^[+-][+-]' \
+                 | grep -vE '"last-modified"' | grep -q .; then
+              echo "::error::oscal/ is stale — run oscal/generate_oscal.py and commit the result"
+              git diff -- oscal/
+              exit 1
+            fi
+            echo "Only the OSCAL last-modified timestamp differs; treating as up to date."
+          fi
+
+      - name: Build the workbook
+        run: python3 workbook/generate_workbook.py
+
+      - name: Upload the workbook as a downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: solidian-pay-workbook
+          path: workbook/*.xlsx
+          if-no-files-found: error

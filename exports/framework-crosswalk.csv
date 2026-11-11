@@ -1,0 +1,328 @@
+Standard,Clause / Criterion,SOC 2 TSC Category,Control ID,Control Name,Domain,Owner,Status,Control Maturity,Evidence Maturity
+ISO/IEC 27001:2022,10.1,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+ISO/IEC 27001:2022,5.1,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+ISO/IEC 27001:2022,5.2,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+ISO/IEC 27001:2022,6.1.2,,CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+ISO/IEC 27001:2022,6.1.2,,CTL-036,Fraud Risk Assessment,Processing Integrity,Head of Risk / Fraud Operations,Implemented,3,3
+ISO/IEC 27001:2022,6.1.3,,CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+ISO/IEC 27001:2022,7.2,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+ISO/IEC 27001:2022,7.3,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+ISO/IEC 27001:2022,7.4,,CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+ISO/IEC 27001:2022,9.2,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+ISO/IEC 27001:2022,9.3,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+ISO/IEC 27001:2022,A.5.1,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+ISO/IEC 27001:2022,A.5.1,,CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+ISO/IEC 27001:2022,A.5.12,,CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+ISO/IEC 27001:2022,A.5.13,,CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+ISO/IEC 27001:2022,A.5.14,,CTL-025,Third-Party Disclosure & Cross-Border Transfer Controls,Privacy,Legal / Privacy Office,In Progress,3,2
+ISO/IEC 27001:2022,A.5.14,,CTL-028,Encryption & Secure Data Transmission,Asset Management,IT Security,Implemented,4,4
+ISO/IEC 27001:2022,A.5.15,,CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+ISO/IEC 27001:2022,A.5.16,,CTL-006,Identity Lifecycle Management,Access & Identity,IT Security,Implemented,4,3
+ISO/IEC 27001:2022,A.5.18,,CTL-006,Identity Lifecycle Management,Access & Identity,IT Security,Implemented,4,3
+ISO/IEC 27001:2022,A.5.19,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+ISO/IEC 27001:2022,A.5.19,,CTL-026,Vendor Risk Management,Third-Party Risk,Vendor Risk Management,Implemented,3,3
+ISO/IEC 27001:2022,A.5.2,,CTL-003,"Roles, Responsibilities & Segregation of Duties",Governance,COO / Chief of Staff,Implemented,3,3
+ISO/IEC 27001:2022,A.5.20,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+ISO/IEC 27001:2022,A.5.20,,CTL-026,Vendor Risk Management,Third-Party Risk,Vendor Risk Management,Implemented,3,3
+ISO/IEC 27001:2022,A.5.21,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+ISO/IEC 27001:2022,A.5.21,,CTL-026,Vendor Risk Management,Third-Party Risk,Vendor Risk Management,Implemented,3,3
+ISO/IEC 27001:2022,A.5.22,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+ISO/IEC 27001:2022,A.5.24,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.5.25,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.5.26,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.5.27,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.5.29,,CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+ISO/IEC 27001:2022,A.5.29,,CTL-037,Business Disruption Risk Mitigation & Insurance,Resilience,Head of Risk / Finance,Implemented,3,3
+ISO/IEC 27001:2022,A.5.3,,CTL-003,"Roles, Responsibilities & Segregation of Duties",Governance,COO / Chief of Staff,Implemented,3,3
+ISO/IEC 27001:2022,A.5.30,,CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+ISO/IEC 27001:2022,A.5.30,,CTL-037,Business Disruption Risk Mitigation & Insurance,Resilience,Head of Risk / Finance,Implemented,3,3
+ISO/IEC 27001:2022,A.5.34,,CTL-022,Privacy Notice & Consent Management,Privacy,Privacy Office,Implemented,3,3
+ISO/IEC 27001:2022,A.5.34,,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+ISO/IEC 27001:2022,A.5.34,,CTL-025,Third-Party Disclosure & Cross-Border Transfer Controls,Privacy,Legal / Privacy Office,In Progress,3,2
+ISO/IEC 27001:2022,A.5.35,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+ISO/IEC 27001:2022,A.5.36,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+ISO/IEC 27001:2022,A.5.9,,CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+ISO/IEC 27001:2022,A.6.1,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+ISO/IEC 27001:2022,A.6.2,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+ISO/IEC 27001:2022,A.6.3,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+ISO/IEC 27001:2022,A.6.4,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+ISO/IEC 27001:2022,A.6.5,,CTL-006,Identity Lifecycle Management,Access & Identity,IT Security,Implemented,4,3
+ISO/IEC 27001:2022,A.6.8,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.6.8,,CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+ISO/IEC 27001:2022,A.7.1,,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.7.10,,CTL-033,Secure Disposal of Media & Confidential Information,Physical Security,IT Operations,In Progress,2,2
+ISO/IEC 27001:2022,A.7.11,,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.7.14,,CTL-033,Secure Disposal of Media & Confidential Information,Physical Security,IT Operations,In Progress,2,2
+ISO/IEC 27001:2022,A.7.2,,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.7.3,,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.7.4,,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.7.5,,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.7.8,,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+ISO/IEC 27001:2022,A.8.1,,CTL-034,Endpoint & Malware Protection,Asset Management,IT Security,Implemented,4,3
+ISO/IEC 27001:2022,A.8.10,,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+ISO/IEC 27001:2022,A.8.10,,CTL-033,Secure Disposal of Media & Confidential Information,Physical Security,IT Operations,In Progress,2,2
+ISO/IEC 27001:2022,A.8.12,,CTL-028,Encryption & Secure Data Transmission,Asset Management,IT Security,Implemented,4,4
+ISO/IEC 27001:2022,A.8.13,,CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+ISO/IEC 27001:2022,A.8.14,,CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+ISO/IEC 27001:2022,A.8.15,,CTL-010,Logging & Security Monitoring,Detection & Response,Security Operations,Implemented,4,4
+ISO/IEC 27001:2022,A.8.16,,CTL-010,Logging & Security Monitoring,Detection & Response,Security Operations,Implemented,4,4
+ISO/IEC 27001:2022,A.8.2,,CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+ISO/IEC 27001:2022,A.8.2,,CTL-005,Privileged Access Management,Access & Identity,IT Security,In Progress,3,2
+ISO/IEC 27001:2022,A.8.20,,CTL-008,Secure Configuration & Boundary Protection,Asset Management,IT Operations,In Progress,3,3
+ISO/IEC 27001:2022,A.8.22,,CTL-008,Secure Configuration & Boundary Protection,Asset Management,IT Operations,In Progress,3,3
+ISO/IEC 27001:2022,A.8.23,,CTL-034,Endpoint & Malware Protection,Asset Management,IT Security,Implemented,4,3
+ISO/IEC 27001:2022,A.8.24,,CTL-028,Encryption & Secure Data Transmission,Asset Management,IT Security,Implemented,4,4
+ISO/IEC 27001:2022,A.8.25,,CTL-039,Secure Development Lifecycle,Secure Development,Engineering / Application Security,In Progress,3,2
+ISO/IEC 27001:2022,A.8.26,,CTL-035,Transaction Processing Integrity & Reconciliation,Processing Integrity,Payment Operations / Finance,Implemented,4,3
+ISO/IEC 27001:2022,A.8.26,,CTL-039,Secure Development Lifecycle,Secure Development,Engineering / Application Security,In Progress,3,2
+ISO/IEC 27001:2022,A.8.27,,CTL-039,Secure Development Lifecycle,Secure Development,Engineering / Application Security,In Progress,3,2
+ISO/IEC 27001:2022,A.8.28,,CTL-039,Secure Development Lifecycle,Secure Development,Engineering / Application Security,In Progress,3,2
+ISO/IEC 27001:2022,A.8.29,,CTL-039,Secure Development Lifecycle,Secure Development,Engineering / Application Security,In Progress,3,2
+ISO/IEC 27001:2022,A.8.3,,CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+ISO/IEC 27001:2022,A.8.31,,CTL-013,Change Management,Detection & Response,Engineering,Implemented,3,3
+ISO/IEC 27001:2022,A.8.32,,CTL-013,Change Management,Detection & Response,Engineering,Implemented,3,3
+ISO/IEC 27001:2022,A.8.5,,CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+ISO/IEC 27001:2022,A.8.6,,CTL-027,Availability & Capacity Management,Resilience,Site Reliability Engineering,Implemented,4,3
+ISO/IEC 27001:2022,A.8.7,,CTL-034,Endpoint & Malware Protection,Asset Management,IT Security,Implemented,4,3
+ISO/IEC 27001:2022,A.8.8,,CTL-009,Vulnerability Management,Asset Management,IT Security,In Progress,3,2
+ISO/IEC 27001:2022,A.8.9,,CTL-008,Secure Configuration & Boundary Protection,Asset Management,IT Operations,In Progress,3,3
+ISO/IEC 42001:2023,10.2,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+ISO/IEC 42001:2023,10.2,,CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+ISO/IEC 42001:2023,5.2,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+ISO/IEC 42001:2023,5.3,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+ISO/IEC 42001:2023,5.3,,CTL-003,"Roles, Responsibilities & Segregation of Duties",Governance,COO / Chief of Staff,Implemented,3,3
+ISO/IEC 42001:2023,6.1.2,,CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+ISO/IEC 42001:2023,6.1.2,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+ISO/IEC 42001:2023,6.1.2,,CTL-036,Fraud Risk Assessment,Processing Integrity,Head of Risk / Fraud Operations,Implemented,3,3
+ISO/IEC 42001:2023,6.1.3,,CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+ISO/IEC 42001:2023,6.1.3,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+ISO/IEC 42001:2023,6.1.4,,CTL-038,AI System Impact Assessment,AI Governance,AI Governance / Privacy Office,In Progress,2,2
+ISO/IEC 42001:2023,6.2,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+ISO/IEC 42001:2023,7.2,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+ISO/IEC 42001:2023,7.3,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+ISO/IEC 42001:2023,7.4,,CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+ISO/IEC 42001:2023,8.2,,CTL-014,AI System Inventory & Risk Classification,AI Governance,AI Governance,Implemented,4,3
+ISO/IEC 42001:2023,8.2,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+ISO/IEC 42001:2023,8.4,,CTL-038,AI System Impact Assessment,AI Governance,AI Governance / Privacy Office,In Progress,2,2
+ISO/IEC 42001:2023,9.2,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+ISO/IEC 42001:2023,9.3,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+ISO/IEC 42001:2023,A.10.2,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+ISO/IEC 42001:2023,A.10.3,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+ISO/IEC 42001:2023,A.3.2,,CTL-003,"Roles, Responsibilities & Segregation of Duties",Governance,COO / Chief of Staff,Implemented,3,3
+ISO/IEC 42001:2023,A.3.2,,CTL-016,Human Oversight of AI Systems,AI Governance,Product / AI Governance,Implemented,4,3
+ISO/IEC 42001:2023,A.3.3,,CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+ISO/IEC 42001:2023,A.4.2,,CTL-014,AI System Inventory & Risk Classification,AI Governance,AI Governance,Implemented,4,3
+ISO/IEC 42001:2023,A.5.2,,CTL-038,AI System Impact Assessment,AI Governance,AI Governance / Privacy Office,In Progress,2,2
+ISO/IEC 42001:2023,A.5.3,,CTL-038,AI System Impact Assessment,AI Governance,AI Governance / Privacy Office,In Progress,2,2
+ISO/IEC 42001:2023,A.5.4,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+ISO/IEC 42001:2023,A.5.4,,CTL-038,AI System Impact Assessment,AI Governance,AI Governance / Privacy Office,In Progress,2,2
+ISO/IEC 42001:2023,A.5.5,,CTL-038,AI System Impact Assessment,AI Governance,AI Governance / Privacy Office,In Progress,2,2
+ISO/IEC 42001:2023,A.6.1.3,,CTL-016,Human Oversight of AI Systems,AI Governance,Product / AI Governance,Implemented,4,3
+ISO/IEC 42001:2023,A.6.2.4,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+ISO/IEC 42001:2023,A.6.2.5,,CTL-013,Change Management,Detection & Response,Engineering,Implemented,3,3
+ISO/IEC 42001:2023,A.6.2.6,,CTL-018,AI Performance & Drift Monitoring,AI Governance,AI Governance / Data Science,In Progress,3,2
+ISO/IEC 42001:2023,A.6.2.8,,CTL-010,Logging & Security Monitoring,Detection & Response,Security Operations,Implemented,4,4
+ISO/IEC 42001:2023,A.7.2,,CTL-020,Data Quality & Governance for AI,AI Governance,Data Engineering,In Progress,2,2
+ISO/IEC 42001:2023,A.7.2,,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+ISO/IEC 42001:2023,A.7.3,,CTL-020,Data Quality & Governance for AI,AI Governance,Data Engineering,In Progress,2,2
+ISO/IEC 42001:2023,A.7.4,,CTL-020,Data Quality & Governance for AI,AI Governance,Data Engineering,In Progress,2,2
+ISO/IEC 42001:2023,A.7.5,,CTL-017,AI Transparency & Explainability,AI Governance,AI Governance,In Progress,2,2
+ISO/IEC 42001:2023,A.7.5,,CTL-020,Data Quality & Governance for AI,AI Governance,Data Engineering,In Progress,2,2
+ISO/IEC 42001:2023,A.8.2,,CTL-017,AI Transparency & Explainability,AI Governance,AI Governance,In Progress,2,2
+ISO/IEC 42001:2023,A.8.3,,CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+ISO/IEC 42001:2023,A.8.4,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+ISO/IEC 42001:2023,A.8.4,,CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+ISO/IEC 42001:2023,A.8.5,,CTL-017,AI Transparency & Explainability,AI Governance,AI Governance,In Progress,2,2
+ISO/IEC 42001:2023,A.9.2,,CTL-016,Human Oversight of AI Systems,AI Governance,Product / AI Governance,Implemented,4,3
+NIST AI RMF 1.0,GOVERN 1.1,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+NIST AI RMF 1.0,GOVERN 1.2,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+NIST AI RMF 1.0,GOVERN 1.3,,CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+NIST AI RMF 1.0,GOVERN 1.5,,CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+NIST AI RMF 1.0,GOVERN 1.5,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+NIST AI RMF 1.0,GOVERN 1.6,,CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+NIST AI RMF 1.0,GOVERN 1.6,,CTL-014,AI System Inventory & Risk Classification,AI Governance,AI Governance,Implemented,4,3
+NIST AI RMF 1.0,GOVERN 2.1,,CTL-003,"Roles, Responsibilities & Segregation of Duties",Governance,COO / Chief of Staff,Implemented,3,3
+NIST AI RMF 1.0,GOVERN 2.2,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+NIST AI RMF 1.0,GOVERN 3.2,,CTL-016,Human Oversight of AI Systems,AI Governance,Product / AI Governance,Implemented,4,3
+NIST AI RMF 1.0,GOVERN 4.2,,CTL-017,AI Transparency & Explainability,AI Governance,AI Governance,In Progress,2,2
+NIST AI RMF 1.0,GOVERN 4.2,,CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+NIST AI RMF 1.0,GOVERN 4.3,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+NIST AI RMF 1.0,GOVERN 4.3,,CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+NIST AI RMF 1.0,GOVERN 5.1,,CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+NIST AI RMF 1.0,GOVERN 6.1,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+NIST AI RMF 1.0,MANAGE 2.4,,CTL-013,Change Management,Detection & Response,Engineering,Implemented,3,3
+NIST AI RMF 1.0,MANAGE 2.4,,CTL-018,AI Performance & Drift Monitoring,AI Governance,AI Governance / Data Science,In Progress,3,2
+NIST AI RMF 1.0,MANAGE 3.1,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+NIST AI RMF 1.0,MANAGE 4.1,,CTL-010,Logging & Security Monitoring,Detection & Response,Security Operations,Implemented,4,4
+NIST AI RMF 1.0,MANAGE 4.1,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+NIST AI RMF 1.0,MANAGE 4.1,,CTL-018,AI Performance & Drift Monitoring,AI Governance,AI Governance / Data Science,In Progress,3,2
+NIST AI RMF 1.0,MANAGE 4.1,,CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+NIST AI RMF 1.0,MANAGE 4.3,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+NIST AI RMF 1.0,MANAGE 4.3,,CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+NIST AI RMF 1.0,MAP 1.1,,CTL-014,AI System Inventory & Risk Classification,AI Governance,AI Governance,Implemented,4,3
+NIST AI RMF 1.0,MAP 1.5,,CTL-014,AI System Inventory & Risk Classification,AI Governance,AI Governance,Implemented,4,3
+NIST AI RMF 1.0,MAP 2.3,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+NIST AI RMF 1.0,MAP 2.3,,CTL-020,Data Quality & Governance for AI,AI Governance,Data Engineering,In Progress,2,2
+NIST AI RMF 1.0,MAP 2.3,,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+NIST AI RMF 1.0,MAP 3.5,,CTL-016,Human Oversight of AI Systems,AI Governance,Product / AI Governance,Implemented,4,3
+NIST AI RMF 1.0,MAP 4.1,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+NIST AI RMF 1.0,MAP 5.1,,CTL-014,AI System Inventory & Risk Classification,AI Governance,AI Governance,Implemented,4,3
+NIST AI RMF 1.0,MAP 5.1,,CTL-036,Fraud Risk Assessment,Processing Integrity,Head of Risk / Fraud Operations,Implemented,3,3
+NIST AI RMF 1.0,MAP 5.1,,CTL-038,AI System Impact Assessment,AI Governance,AI Governance / Privacy Office,In Progress,2,2
+NIST AI RMF 1.0,MAP 5.2,,CTL-038,AI System Impact Assessment,AI Governance,AI Governance / Privacy Office,In Progress,2,2
+NIST AI RMF 1.0,MEASURE 2.10,,CTL-022,Privacy Notice & Consent Management,Privacy,Privacy Office,Implemented,3,3
+NIST AI RMF 1.0,MEASURE 2.10,,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+NIST AI RMF 1.0,MEASURE 2.11,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+NIST AI RMF 1.0,MEASURE 2.3,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+NIST AI RMF 1.0,MEASURE 2.4,,CTL-010,Logging & Security Monitoring,Detection & Response,Security Operations,Implemented,4,4
+NIST AI RMF 1.0,MEASURE 2.4,,CTL-018,AI Performance & Drift Monitoring,AI Governance,AI Governance / Data Science,In Progress,3,2
+NIST AI RMF 1.0,MEASURE 2.5,,CTL-018,AI Performance & Drift Monitoring,AI Governance,AI Governance / Data Science,In Progress,3,2
+NIST AI RMF 1.0,MEASURE 2.6,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+NIST AI RMF 1.0,MEASURE 2.7,,CTL-009,Vulnerability Management,Asset Management,IT Security,In Progress,3,2
+NIST AI RMF 1.0,MEASURE 2.8,,CTL-017,AI Transparency & Explainability,AI Governance,AI Governance,In Progress,2,2
+NIST AI RMF 1.0,MEASURE 2.9,,CTL-017,AI Transparency & Explainability,AI Governance,AI Governance,In Progress,2,2
+NIST AI RMF 1.0,MEASURE 3.3,,CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+NIST CSF 2.0,DE.CM-01,,CTL-010,Logging & Security Monitoring,Detection & Response,Security Operations,Implemented,4,4
+NIST CSF 2.0,DE.CM-09,,CTL-010,Logging & Security Monitoring,Detection & Response,Security Operations,Implemented,4,4
+NIST CSF 2.0,DE.CM-09,,CTL-018,AI Performance & Drift Monitoring,AI Governance,AI Governance / Data Science,In Progress,3,2
+NIST CSF 2.0,DE.CM-09,,CTL-034,Endpoint & Malware Protection,Asset Management,IT Security,Implemented,4,3
+NIST CSF 2.0,GV.OC-01,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+NIST CSF 2.0,GV.OC-02,,CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+NIST CSF 2.0,GV.OV-02,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+NIST CSF 2.0,GV.OV-03,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+NIST CSF 2.0,GV.PO-01,,CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+NIST CSF 2.0,GV.RM-01,,CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+NIST CSF 2.0,GV.RM-05,,CTL-037,Business Disruption Risk Mitigation & Insurance,Resilience,Head of Risk / Finance,Implemented,3,3
+NIST CSF 2.0,GV.RR-01,,CTL-003,"Roles, Responsibilities & Segregation of Duties",Governance,COO / Chief of Staff,Implemented,3,3
+NIST CSF 2.0,GV.RR-01,,CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+NIST CSF 2.0,GV.RR-02,,CTL-003,"Roles, Responsibilities & Segregation of Duties",Governance,COO / Chief of Staff,Implemented,3,3
+NIST CSF 2.0,GV.RR-04,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+NIST CSF 2.0,GV.SC-06,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+NIST CSF 2.0,GV.SC-06,,CTL-026,Vendor Risk Management,Third-Party Risk,Vendor Risk Management,Implemented,3,3
+NIST CSF 2.0,GV.SC-07,,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+NIST CSF 2.0,GV.SC-07,,CTL-025,Third-Party Disclosure & Cross-Border Transfer Controls,Privacy,Legal / Privacy Office,In Progress,3,2
+NIST CSF 2.0,ID.AM-01,,CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+NIST CSF 2.0,ID.AM-02,,CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+NIST CSF 2.0,ID.AM-02,,CTL-014,AI System Inventory & Risk Classification,AI Governance,AI Governance,Implemented,4,3
+NIST CSF 2.0,ID.AM-05,,CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+NIST CSF 2.0,ID.AM-07,,CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+NIST CSF 2.0,ID.AM-07,,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+NIST CSF 2.0,ID.AM-08,,CTL-014,AI System Inventory & Risk Classification,AI Governance,AI Governance,Implemented,4,3
+NIST CSF 2.0,ID.AM-08,,CTL-033,Secure Disposal of Media & Confidential Information,Physical Security,IT Operations,In Progress,2,2
+NIST CSF 2.0,ID.IM-01,,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+NIST CSF 2.0,ID.IM-04,,CTL-037,Business Disruption Risk Mitigation & Insurance,Resilience,Head of Risk / Finance,Implemented,3,3
+NIST CSF 2.0,ID.RA-01,,CTL-009,Vulnerability Management,Asset Management,IT Security,In Progress,3,2
+NIST CSF 2.0,ID.RA-04,,CTL-015,"AI Risk Assessment (Bias, Fairness, Robustness)",AI Governance,AI Governance,In Progress,3,2
+NIST CSF 2.0,ID.RA-04,,CTL-036,Fraud Risk Assessment,Processing Integrity,Head of Risk / Fraud Operations,Implemented,3,3
+NIST CSF 2.0,ID.RA-04,,CTL-038,AI System Impact Assessment,AI Governance,AI Governance / Privacy Office,In Progress,2,2
+NIST CSF 2.0,ID.RA-05,,CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+NIST CSF 2.0,ID.RA-07,,CTL-013,Change Management,Detection & Response,Engineering,Implemented,3,3
+NIST CSF 2.0,PR.AA-01,,CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+NIST CSF 2.0,PR.AA-01,,CTL-006,Identity Lifecycle Management,Access & Identity,IT Security,Implemented,4,3
+NIST CSF 2.0,PR.AA-03,,CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+NIST CSF 2.0,PR.AA-05,,CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+NIST CSF 2.0,PR.AA-05,,CTL-005,Privileged Access Management,Access & Identity,IT Security,In Progress,3,2
+NIST CSF 2.0,PR.AA-06,,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+NIST CSF 2.0,PR.AT-01,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+NIST CSF 2.0,PR.AT-02,,CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+NIST CSF 2.0,PR.DS-01,,CTL-028,Encryption & Secure Data Transmission,Asset Management,IT Security,Implemented,4,4
+NIST CSF 2.0,PR.DS-01,,CTL-035,Transaction Processing Integrity & Reconciliation,Processing Integrity,Payment Operations / Finance,Implemented,4,3
+NIST CSF 2.0,PR.DS-02,,CTL-028,Encryption & Secure Data Transmission,Asset Management,IT Security,Implemented,4,4
+NIST CSF 2.0,PR.DS-11,,CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+NIST CSF 2.0,PR.IR-01,,CTL-008,Secure Configuration & Boundary Protection,Asset Management,IT Operations,In Progress,3,3
+NIST CSF 2.0,PR.IR-02,,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+NIST CSF 2.0,PR.IR-04,,CTL-027,Availability & Capacity Management,Resilience,Site Reliability Engineering,Implemented,4,3
+NIST CSF 2.0,PR.PS-01,,CTL-008,Secure Configuration & Boundary Protection,Asset Management,IT Operations,In Progress,3,3
+NIST CSF 2.0,PR.PS-02,,CTL-009,Vulnerability Management,Asset Management,IT Security,In Progress,3,2
+NIST CSF 2.0,PR.PS-05,,CTL-034,Endpoint & Malware Protection,Asset Management,IT Security,Implemented,4,3
+NIST CSF 2.0,PR.PS-06,,CTL-039,Secure Development Lifecycle,Secure Development,Engineering / Application Security,In Progress,3,2
+NIST CSF 2.0,RC.RP-01,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+NIST CSF 2.0,RC.RP-01,,CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+NIST CSF 2.0,RS.AN-03,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+NIST CSF 2.0,RS.MA-01,,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+NIST CSF 2.0,RS.MA-01,,CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+SOC 2 TSC,A1.1,Availability,CTL-027,Availability & Capacity Management,Resilience,Site Reliability Engineering,Implemented,4,3
+SOC 2 TSC,A1.2,Availability,CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+SOC 2 TSC,A1.2,Availability,CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+SOC 2 TSC,A1.3,Availability,CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+SOC 2 TSC,C1.1,Confidentiality,CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+SOC 2 TSC,C1.2,Confidentiality,CTL-033,Secure Disposal of Media & Confidential Information,Physical Security,IT Operations,In Progress,2,2
+SOC 2 TSC,CC1.1,Security (Common Criteria),CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+SOC 2 TSC,CC1.2,Security (Common Criteria),CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+SOC 2 TSC,CC1.2,Security (Common Criteria),CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+SOC 2 TSC,CC1.3,Security (Common Criteria),CTL-003,"Roles, Responsibilities & Segregation of Duties",Governance,COO / Chief of Staff,Implemented,3,3
+SOC 2 TSC,CC1.4,Security (Common Criteria),CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+SOC 2 TSC,CC1.5,Security (Common Criteria),CTL-003,"Roles, Responsibilities & Segregation of Duties",Governance,COO / Chief of Staff,Implemented,3,3
+SOC 2 TSC,CC1.5,Security (Common Criteria),CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+SOC 2 TSC,CC2.1,Security (Common Criteria),CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+SOC 2 TSC,CC2.2,Security (Common Criteria),CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+SOC 2 TSC,CC2.2,Security (Common Criteria),CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+SOC 2 TSC,CC2.3,Security (Common Criteria),CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+SOC 2 TSC,CC3.1,Security (Common Criteria),CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+SOC 2 TSC,CC3.2,Security (Common Criteria),CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+SOC 2 TSC,CC3.3,Security (Common Criteria),CTL-036,Fraud Risk Assessment,Processing Integrity,Head of Risk / Fraud Operations,Implemented,3,3
+SOC 2 TSC,CC3.4,Security (Common Criteria),CTL-002,Risk Management Framework,Governance,Head of Risk,Implemented,4,3
+SOC 2 TSC,CC3.4,Security (Common Criteria),CTL-013,Change Management,Detection & Response,Engineering,Implemented,3,3
+SOC 2 TSC,CC4.1,Security (Common Criteria),CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+SOC 2 TSC,CC4.2,Security (Common Criteria),CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+SOC 2 TSC,CC5.1,Security (Common Criteria),CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+SOC 2 TSC,CC5.2,Security (Common Criteria),CTL-008,Secure Configuration & Boundary Protection,Asset Management,IT Operations,In Progress,3,3
+SOC 2 TSC,CC5.3,Security (Common Criteria),CTL-001,Information Security & AI Governance Policy,Governance,CISO / Head of AI Governance,Implemented,4,3
+SOC 2 TSC,CC5.3,Security (Common Criteria),CTL-030,"Personnel Screening, Competence & Security Awareness",People & Awareness,HR / People Ops,Implemented,3,3
+SOC 2 TSC,CC6.1,Security (Common Criteria),CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+SOC 2 TSC,CC6.1,Security (Common Criteria),CTL-005,Privileged Access Management,Access & Identity,IT Security,In Progress,3,2
+SOC 2 TSC,CC6.1,Security (Common Criteria),CTL-007,Asset Inventory & Data Classification,Asset Management,IT Operations,Implemented,4,4
+SOC 2 TSC,CC6.2,Security (Common Criteria),CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+SOC 2 TSC,CC6.2,Security (Common Criteria),CTL-006,Identity Lifecycle Management,Access & Identity,IT Security,Implemented,4,3
+SOC 2 TSC,CC6.3,Security (Common Criteria),CTL-004,Access Control & Least Privilege,Access & Identity,IT Security,Implemented,4,4
+SOC 2 TSC,CC6.3,Security (Common Criteria),CTL-005,Privileged Access Management,Access & Identity,IT Security,In Progress,3,2
+SOC 2 TSC,CC6.3,Security (Common Criteria),CTL-006,Identity Lifecycle Management,Access & Identity,IT Security,Implemented,4,3
+SOC 2 TSC,CC6.4,Security (Common Criteria),CTL-032,Physical & Environmental Security,Physical Security,Facilities / IT Operations,Implemented,3,3
+SOC 2 TSC,CC6.5,Security (Common Criteria),CTL-033,Secure Disposal of Media & Confidential Information,Physical Security,IT Operations,In Progress,2,2
+SOC 2 TSC,CC6.6,Security (Common Criteria),CTL-008,Secure Configuration & Boundary Protection,Asset Management,IT Operations,In Progress,3,3
+SOC 2 TSC,CC6.7,Security (Common Criteria),CTL-028,Encryption & Secure Data Transmission,Asset Management,IT Security,Implemented,4,4
+SOC 2 TSC,CC6.8,Security (Common Criteria),CTL-034,Endpoint & Malware Protection,Asset Management,IT Security,Implemented,4,3
+SOC 2 TSC,CC7.1,Security (Common Criteria),CTL-008,Secure Configuration & Boundary Protection,Asset Management,IT Operations,In Progress,3,3
+SOC 2 TSC,CC7.1,Security (Common Criteria),CTL-009,Vulnerability Management,Asset Management,IT Security,In Progress,3,2
+SOC 2 TSC,CC7.2,Security (Common Criteria),CTL-010,Logging & Security Monitoring,Detection & Response,Security Operations,Implemented,4,4
+SOC 2 TSC,CC7.3,Security (Common Criteria),CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+SOC 2 TSC,CC7.4,Security (Common Criteria),CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+SOC 2 TSC,CC7.4,Security (Common Criteria),CTL-021,AI Incident Management,AI Governance,AI Governance / Security Operations,Not Started,1,1
+SOC 2 TSC,CC7.5,Security (Common Criteria),CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+SOC 2 TSC,CC7.5,Security (Common Criteria),CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+SOC 2 TSC,CC8.1,Security (Common Criteria),CTL-013,Change Management,Detection & Response,Engineering,Implemented,3,3
+SOC 2 TSC,CC8.1,Security (Common Criteria),CTL-039,Secure Development Lifecycle,Secure Development,Engineering / Application Security,In Progress,3,2
+SOC 2 TSC,CC9.1,Security (Common Criteria),CTL-037,Business Disruption Risk Mitigation & Insurance,Resilience,Head of Risk / Finance,Implemented,3,3
+SOC 2 TSC,CC9.2,Security (Common Criteria),CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+SOC 2 TSC,CC9.2,Security (Common Criteria),CTL-026,Vendor Risk Management,Third-Party Risk,Vendor Risk Management,Implemented,3,3
+SOC 2 TSC,P1.1,Privacy,CTL-022,Privacy Notice & Consent Management,Privacy,Privacy Office,Implemented,3,3
+SOC 2 TSC,P2.1,Privacy,CTL-022,Privacy Notice & Consent Management,Privacy,Privacy Office,Implemented,3,3
+SOC 2 TSC,P3.1,Privacy,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+SOC 2 TSC,P3.2,Privacy,CTL-022,Privacy Notice & Consent Management,Privacy,Privacy Office,Implemented,3,3
+SOC 2 TSC,P4.1,Privacy,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+SOC 2 TSC,P4.2,Privacy,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+SOC 2 TSC,P4.3,Privacy,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+SOC 2 TSC,P4.3,Privacy,CTL-033,Secure Disposal of Media & Confidential Information,Physical Security,IT Operations,In Progress,2,2
+SOC 2 TSC,P5.1,Privacy,CTL-023,"Data Subject Access, Correction & Complaint Handling",Privacy,Privacy Office,Implemented,3,3
+SOC 2 TSC,P5.2,Privacy,CTL-023,"Data Subject Access, Correction & Complaint Handling",Privacy,Privacy Office,Implemented,3,3
+SOC 2 TSC,P6.1,Privacy,CTL-025,Third-Party Disclosure & Cross-Border Transfer Controls,Privacy,Legal / Privacy Office,In Progress,3,2
+SOC 2 TSC,P6.2,Privacy,CTL-025,Third-Party Disclosure & Cross-Border Transfer Controls,Privacy,Legal / Privacy Office,In Progress,3,2
+SOC 2 TSC,P6.3,Privacy,CTL-025,Third-Party Disclosure & Cross-Border Transfer Controls,Privacy,Legal / Privacy Office,In Progress,3,2
+SOC 2 TSC,P6.4,Privacy,CTL-019,Third-Party & Vendor AI Oversight,AI Governance,Vendor Risk Management,In Progress,2,2
+SOC 2 TSC,P6.4,Privacy,CTL-025,Third-Party Disclosure & Cross-Border Transfer Controls,Privacy,Legal / Privacy Office,In Progress,3,2
+SOC 2 TSC,P6.4,Privacy,CTL-026,Vendor Risk Management,Third-Party Risk,Vendor Risk Management,Implemented,3,3
+SOC 2 TSC,P6.5,Privacy,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+SOC 2 TSC,P6.6,Privacy,CTL-011,Incident Response & Management,Detection & Response,Security Operations,Implemented,3,3
+SOC 2 TSC,P6.7,Privacy,CTL-025,Third-Party Disclosure & Cross-Border Transfer Controls,Privacy,Legal / Privacy Office,In Progress,3,2
+SOC 2 TSC,P7.1,Privacy,CTL-020,Data Quality & Governance for AI,AI Governance,Data Engineering,In Progress,2,2
+SOC 2 TSC,P7.1,Privacy,CTL-024,"PII Inventory, Minimization & Retention",Privacy,Privacy Office,In Progress,2,2
+SOC 2 TSC,P8.1,Privacy,CTL-023,"Data Subject Access, Correction & Complaint Handling",Privacy,Privacy Office,Implemented,3,3
+SOC 2 TSC,P8.1,Privacy,CTL-029,"Internal Audit, Monitoring & Management Review",Governance,Internal Audit,Implemented,3,3
+SOC 2 TSC,PI1.1,Processing Integrity,CTL-017,AI Transparency & Explainability,AI Governance,AI Governance,In Progress,2,2
+SOC 2 TSC,PI1.1,Processing Integrity,CTL-031,Internal & External Communication of Commitments,Governance,Compliance / Communications,In Progress,3,2
+SOC 2 TSC,PI1.2,Processing Integrity,CTL-020,Data Quality & Governance for AI,AI Governance,Data Engineering,In Progress,2,2
+SOC 2 TSC,PI1.2,Processing Integrity,CTL-035,Transaction Processing Integrity & Reconciliation,Processing Integrity,Payment Operations / Finance,Implemented,4,3
+SOC 2 TSC,PI1.3,Processing Integrity,CTL-035,Transaction Processing Integrity & Reconciliation,Processing Integrity,Payment Operations / Finance,Implemented,4,3
+SOC 2 TSC,PI1.4,Processing Integrity,CTL-035,Transaction Processing Integrity & Reconciliation,Processing Integrity,Payment Operations / Finance,Implemented,4,3
+SOC 2 TSC,PI1.5,Processing Integrity,CTL-012,"Backup, Recovery & Business Continuity",Resilience,IT Operations,Implemented,4,4
+SOC 2 TSC,PI1.5,Processing Integrity,CTL-035,Transaction Processing Integrity & Reconciliation,Processing Integrity,Payment Operations / Finance,Implemented,4,3

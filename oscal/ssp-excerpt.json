@@ -1,0 +1,964 @@
+{
+  "system-security-plan": {
+    "uuid": "fa780feb-48e1-5e5c-8d5a-7cc55c2b0dac",
+    "metadata": {
+      "title": "Solidian Pay Financial Technologies, Inc. \u2014 System Security Plan (Solidian Pay Platform)",
+      "last-modified": "2026-11-11T01:10:47.279421+00:00",
+      "version": "2.0.0",
+      "oscal-version": "1.1.2"
+    },
+    "import-profile": {
+      "href": "#0768f25b-b1ad-5a21-ae5f-058f48699517"
+    },
+    "system-characteristics": {
+      "system-name": "Solidian Pay Platform",
+      "description": "Digital payments, merchant risk, embedded finance, and AI-enabled operations tooling. Fictional system for portfolio demonstration.",
+      "security-sensitivity-level": "moderate",
+      "system-information": {
+        "information-types": [
+          {
+            "title": "Payment and Cardholder-Adjacent Data",
+            "confidentiality-impact": {
+              "base": "fips-199-high"
+            },
+            "integrity-impact": {
+              "base": "fips-199-high"
+            },
+            "availability-impact": {
+              "base": "fips-199-high"
+            }
+          },
+          {
+            "title": "AI Training and Inference Data",
+            "confidentiality-impact": {
+              "base": "fips-199-moderate"
+            },
+            "integrity-impact": {
+              "base": "fips-199-moderate"
+            },
+            "availability-impact": {
+              "base": "fips-199-moderate"
+            }
+          },
+          {
+            "title": "Personal Information of Customers and Merchants",
+            "confidentiality-impact": {
+              "base": "fips-199-high"
+            },
+            "integrity-impact": {
+              "base": "fips-199-moderate"
+            },
+            "availability-impact": {
+              "base": "fips-199-moderate"
+            }
+          }
+        ]
+      },
+      "status": {
+        "state": "operational"
+      }
+    },
+    "control-implementation": {
+      "description": "Implemented requirements below are generated 1:1 from data/controls.yaml and cross-reference the unified catalog.",
+      "implemented-requirements": [
+        {
+          "uuid": "03ea5d33-d8ab-50ff-bab7-1115e246984a",
+          "control-id": "ctl-001",
+          "description": "Establishes and maintains the top-level ISMS/AIMS policy set: security objectives, AI governance principles, scope statements, integrity and ethical-conduct expectations, and management commitment. Approved by the board and reviewed at least annually or on material change.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "ciso---head-of-ai-governance"
+            }
+          ],
+          "remarks": "Policy set unified across security and AI governance rather than run as parallel programs"
+        },
+        {
+          "uuid": "b6811a09-9c5e-5c2b-94c7-2087334bd768",
+          "control-id": "ctl-002",
+          "description": "Defines the enterprise risk methodology (likelihood x impact scoring, inherent/residual treatment) applied consistently to security, privacy, processing-integrity and AI system risk, including assessment of the risk arising from significant change to the system or environment.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "head-of-risk"
+            }
+          ],
+          "remarks": "Single risk register covers security, privacy, processing integrity and AI risk lines"
+        },
+        {
+          "uuid": "d0763f95-804c-5f4d-85b5-17f1a82af68a",
+          "control-id": "ctl-003",
+          "description": "Defines accountable owners for the ISMS, AIMS, each material AI use case, and each control; establishes reporting lines and holds individuals accountable for control responsibilities; enforces segregation between AI system development, risk assessment, and approval-to-deploy functions.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "coo---chief-of-staff"
+            }
+          ],
+          "remarks": "AI use-case owners formally distinct from the engineering teams that build the models"
+        },
+        {
+          "uuid": "85585fee-a86d-5242-8874-96785913be23",
+          "control-id": "ctl-004",
+          "description": "Enforces role-based, least-privilege access to systems, data, and model/training environments; MFA required for all privileged and remote access; periodic user access reviews performed.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-security"
+            }
+          ],
+          "remarks": "Carried forward from original control library (CL-001); MFA enforced org-wide"
+        },
+        {
+          "uuid": "f23863ae-9469-5966-b715-3b14eadfaa7d",
+          "control-id": "ctl-005",
+          "description": "Just-in-time elevation, session recording, and periodic recertification for administrative access to cloud, database, and model-training infrastructure.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-security"
+            }
+          ],
+          "remarks": "PAM tool deployed for cloud; database tier recertification still manual"
+        },
+        {
+          "uuid": "b56e89d4-3238-577b-a6f2-8d5d8abb0fa1",
+          "control-id": "ctl-006",
+          "description": "Automates registration, authorization, modification and removal of employee and contractor access on join, role change, and termination.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-security"
+            }
+          ],
+          "remarks": ""
+        },
+        {
+          "uuid": "19266817-7310-528a-909f-ef51a5e7bfb0",
+          "control-id": "ctl-007",
+          "description": "Maintains a current inventory of information assets and AI systems with data-sensitivity and criticality classification, including identification of information designated confidential and the handling rules that follow from each classification tier.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-operations"
+            }
+          ],
+          "remarks": "Includes cloud, endpoint, and AI-system assets in one register"
+        },
+        {
+          "uuid": "7fe17908-4be2-51d8-a7fd-6f6c33896f67",
+          "control-id": "ctl-008",
+          "description": "Defines and enforces hardened baseline configurations for cloud accounts, endpoints, and network appliances; implements boundary protection (firewalls, WAF, segmentation) against external threats; configuration drift is detected and remediated.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-operations"
+            }
+          ],
+          "remarks": "Cloud baseline strong (AWS + Azure CSPM); endpoint baseline lagging"
+        },
+        {
+          "uuid": "77f56caf-cd6f-519e-89ec-56e36ab0a0cb",
+          "control-id": "ctl-009",
+          "description": "Continuous scanning, risk-based prioritization, and patching of infrastructure and application vulnerabilities, including dependencies used by AI/ML pipelines; penetration testing performed annually.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-security"
+            }
+          ],
+          "remarks": "SLA compliance improving quarter over quarter"
+        },
+        {
+          "uuid": "157a07b6-eefb-5ec6-a229-d886669d6329",
+          "control-id": "ctl-010",
+          "description": "Centralized log collection, correlation, and alerting across infrastructure, applications, and AI inference endpoints; anomalies are detected and routed for evaluation.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "security-operations"
+            }
+          ],
+          "remarks": "SIEM ingests model-serving logs alongside infra logs"
+        },
+        {
+          "uuid": "7bb7ee56-4789-5d03-85bb-c0e333c25608",
+          "control-id": "ctl-011",
+          "description": "Documented incident response plan covering evaluation, containment, remediation and recovery for security incidents and AI-specific incidents (harmful output, safety violation, model compromise), with defined escalation, breach notification obligations, and post-incident review.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "security-operations"
+            }
+          ],
+          "remarks": "AI-incident escalation path added Q2 2026; one tabletop exercise completed"
+        },
+        {
+          "uuid": "99f5396b-4f68-5d26-914b-c0c34b168f66",
+          "control-id": "ctl-012",
+          "description": "Ensures data and model-artifact resilience through encrypted backups, periodic restore testing, and a documented, tested business continuity and disaster recovery plan.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-operations"
+            }
+          ],
+          "remarks": "Includes trained model artifacts and feature store snapshots, not just databases"
+        },
+        {
+          "uuid": "775efae7-ce25-5472-b6a1-9bdc3209e688",
+          "control-id": "ctl-013",
+          "description": "Controlled change process for production systems and for model releases/retraining, including risk assessment of significant changes, segregation between developer and approver, rollback plans, and pre-deployment review.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "engineering"
+            }
+          ],
+          "remarks": "Model releases go through the same CAB gate as application changes"
+        },
+        {
+          "uuid": "da2b714f-1eb5-523c-bb6d-f1b20eaacbde",
+          "control-id": "ctl-014",
+          "description": "Maintains a complete inventory of AI systems (internally built and third-party) with purpose, model type, and a risk-tiering method consistent with ISO 42001 and NIST AI RMF MAP function.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "ai-governance"
+            }
+          ],
+          "remarks": "Inventory covers fraud scoring, underwriting, KYC review, support copilot, engineering copilot"
+        },
+        {
+          "uuid": "3ab7f3d5-9c5e-5830-bd83-f0e20eacc161",
+          "control-id": "ctl-015",
+          "description": "Pre-deployment and periodic assessment of AI systems for statistical bias, disparate impact, adversarial robustness, and safety failure modes, with defined risk-acceptance thresholds.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "ai-governance"
+            }
+          ],
+          "remarks": "Fairness metrics defined for fraud and underwriting models; not yet extended to KYC review model"
+        },
+        {
+          "uuid": "00efed18-3470-58e6-9b22-d6213d4b75a4",
+          "control-id": "ctl-016",
+          "description": "Ensures human-in-the-loop or human-on-the-loop review is designed into AI systems commensurate with risk tier, with defined override authority and escalation paths.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "product---ai-governance"
+            }
+          ],
+          "remarks": "High-risk systems (fraud, underwriting) run HITL; low-risk engineering copilot runs unsupervised by design"
+        },
+        {
+          "uuid": "a518591e-740e-5b31-a487-fc676707a88d",
+          "control-id": "ctl-017",
+          "description": "Provides documented model cards / system cards, decision-rationale capability for customer-impacting decisions, and disclosure to affected individuals where required.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "2"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "ai-governance"
+            }
+          ],
+          "remarks": "System cards exist for fraud and underwriting models only"
+        },
+        {
+          "uuid": "9e40b747-69a5-52e4-bcf4-e250273b84d3",
+          "control-id": "ctl-018",
+          "description": "Ongoing monitoring of AI system accuracy, calibration, and data/concept drift in production, with defined thresholds that trigger review or rollback.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "ai-governance---data-science"
+            }
+          ],
+          "remarks": "Drift dashboard live for fraud model; underwriting model still manual quarterly review"
+        },
+        {
+          "uuid": "1e116779-1180-539c-a370-b043725ee9ab",
+          "control-id": "ctl-019",
+          "description": "Due diligence, contractual controls, and ongoing monitoring of third-party AI/foundation-model providers embedded in Solidian Pay products (e.g. the customer support copilot).",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "2"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "vendor-risk-management"
+            }
+          ],
+          "remarks": "RFI/RFP lifecycle (see /docs/rfi-rfp) is the flagship example of this control operating end-to-end"
+        },
+        {
+          "uuid": "d36052c2-cda9-5218-a493-a05c3a4478e5",
+          "control-id": "ctl-020",
+          "description": "Ensures training and inference data used by AI systems is accurate, representative, complete, and lineage-tracked; addresses data quality issues that could produce biased or unsafe outputs.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "2"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "data-engineering"
+            }
+          ],
+          "remarks": "Lineage mapping in progress for fraud model training data; not started for others"
+        },
+        {
+          "uuid": "1ec9cd2d-6ec8-510e-affb-08f85bafa2c5",
+          "control-id": "ctl-021",
+          "description": "Dedicated intake, triage, and remediation path for AI-specific incidents (harmful/unsafe output, fairness violation, model compromise) distinct from generic IT incident handling.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Not Started"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "1"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "ai-governance---security-operations"
+            }
+          ],
+          "remarks": "Currently folded into generic IR process (CTL-011); dedicated AI track planned for Q1"
+        },
+        {
+          "uuid": "b5b7002c-abad-5269-b552-16a2505e92f6",
+          "control-id": "ctl-022",
+          "description": "Maintains accurate, accessible privacy notices describing the purposes for which personal information is collected, used, retained and disclosed; captures and honours choice and consent \u2014 including explicit consent for sensitive information \u2014 for processing of personal data, including data used in AI training and inference.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "privacy-office"
+            }
+          ],
+          "remarks": "Notice covers AI-specific processing purposes for the fraud and underwriting models"
+        },
+        {
+          "uuid": "d582b075-0739-517d-a65a-978c141b7e46",
+          "control-id": "ctl-023",
+          "description": "Documented process and tooling for receiving, verifying, and fulfilling data subject access, correction, deletion, and portability requests within regulatory timeframes; handles and tracks privacy complaints and monitors compliance with privacy commitments.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "privacy-office"
+            }
+          ],
+          "remarks": ""
+        },
+        {
+          "uuid": "cafad2cc-6b82-509f-8ee3-6f4e4068127b",
+          "control-id": "ctl-024",
+          "description": "Maintains a data map of personal information processed across systems and AI pipelines; limits collection and use to the purposes disclosed in the privacy notice; enforces minimization, accuracy, and defined retention and disposal schedules.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "2"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "privacy-office"
+            }
+          ],
+          "remarks": "Data map complete for core banking systems; AI training data stores not yet mapped"
+        },
+        {
+          "uuid": "0a6e5e33-eff4-5aa2-a09b-f9fe99857f51",
+          "control-id": "ctl-025",
+          "description": "Governs disclosure of personal information to third parties: disclosures are made only for disclosed purposes and with consent where required, are recorded (including unauthorized disclosures), are covered by contractual privacy commitments, and \u2014 for transfers between the US, Canada and UK operations and to third-party AI providers \u2014 are supported by a documented legal basis and transfer safeguards.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "legal---privacy-office"
+            }
+          ],
+          "remarks": "Scoped around the SOC 2 Privacy P6 series: consent for disclosure, the disclosure register, records of unauthorized disclosure, and third-party privacy commitments, with cross-border transfer handled as one case within it"
+        },
+        {
+          "uuid": "aaebcfb3-60ee-58ed-814c-6685662802e8",
+          "control-id": "ctl-026",
+          "description": "Risk-tiered due diligence, contracting, and ongoing monitoring for non-AI third-party vendors and service providers, including review of subservice organization SOC reports and complementary user entity controls (excludes AI vendors, covered by CTL-019).",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "vendor-risk-management"
+            }
+          ],
+          "remarks": "Includes review of subservice organization SOC reports and complementary user entity controls, which is what the carve-out vs inclusive method decision turns on"
+        },
+        {
+          "uuid": "47c34248-077c-5bae-acad-41fc754def5e",
+          "control-id": "ctl-027",
+          "description": "Monitors and manages system capacity and availability against defined service commitments and SLOs for customer-facing payment and AI inference services; forecasts demand and provisions capacity ahead of it.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "site-reliability-engineering"
+            }
+          ],
+          "remarks": ""
+        },
+        {
+          "uuid": "1d57a2f3-a761-5485-9741-7b836728b94f",
+          "control-id": "ctl-028",
+          "description": "Enforces encryption in transit and at rest for customer, payment, and model-training data; restricts and protects the transmission, movement and removal of information to authorized internal and external users.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-security"
+            }
+          ],
+          "remarks": ""
+        },
+        {
+          "uuid": "b21e00b8-944b-5315-832b-a759937855bc",
+          "control-id": "ctl-029",
+          "description": "Performs ongoing and separate evaluations of control effectiveness (internal audit of the ISMS/AIMS and control self-assessment), evaluates and communicates deficiencies to parties responsible for corrective action, and runs a formal management review that consumes metrics, incidents, and audit findings to drive continual improvement.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "internal-audit"
+            }
+          ],
+          "remarks": "One internal audit cycle completed against the expanded control set"
+        },
+        {
+          "uuid": "9308c34f-c7c6-5bf2-9d29-e014c619a787",
+          "control-id": "ctl-030",
+          "description": "Attracts, develops and retains competent personnel: background screening proportionate to role sensitivity, defined competence requirements, onboarding and annual security and privacy awareness training, role-based training for AI and control owners, and a disciplinary process for policy violations.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "hr---people-ops"
+            }
+          ],
+          "remarks": "Competence and accountability sit with HR rather than security, so they are controlled here rather than inside the policy control"
+        },
+        {
+          "uuid": "d893d2e1-64c2-5ea6-b19c-f78248d3fa1f",
+          "control-id": "ctl-031",
+          "description": "Generates and communicates quality information needed to support control functioning: internal communication of objectives, policies and control responsibilities, and external communication to customers and other parties of service commitments, system requirements, processing quality objectives, security practices, and the channel for reporting failures and complaints.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "compliance---communications"
+            }
+          ],
+          "remarks": "Covers both directions of communication: control responsibilities communicated internally, and service commitments and the failure-reporting channel communicated externally"
+        },
+        {
+          "uuid": "8a43d2bf-520a-56cc-8d32-4158a893ff62",
+          "control-id": "ctl-032",
+          "description": "Restricts physical access to facilities and protected information assets to authorized personnel, and maintains environmental protections (power, fire suppression, climate control) for on-premises infrastructure supporting availability commitments.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "facilities---it-operations"
+            }
+          ],
+          "remarks": "Most production infrastructure is cloud-hosted, so this control relies partly on subservice organization attestations (see CTL-026); the corporate offices remain in scope directly"
+        },
+        {
+          "uuid": "bbc93d98-930e-5831-b031-9a0a707fb6bf",
+          "control-id": "ctl-033",
+          "description": "Securely decommissions and disposes of physical media, endpoints and storage containing confidential information and personal data, with certificates of destruction and verified cryptographic erasure for cloud storage.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "2"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-operations"
+            }
+          ],
+          "remarks": "Vendor destruction certificates are not yet consistently retained, which is the main evidence weakness in this control"
+        },
+        {
+          "uuid": "f49653a1-eadc-5a6e-a315-2f6a4b363b5d",
+          "control-id": "ctl-034",
+          "description": "Deploys and maintains endpoint detection and response, anti-malware, and email/web filtering controls across corporate endpoints and servers to prevent and detect the introduction of malicious software.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "it-security"
+            }
+          ],
+          "remarks": "Covers the corporate endpoint estate and servers; cloud workload protection is handled under CTL-008"
+        },
+        {
+          "uuid": "0abd97f4-9d78-5cea-a3c1-d2f99fe45c7c",
+          "control-id": "ctl-035",
+          "description": "Ensures payment and ledger processing is complete, valid, accurate, timely and authorized: input validation and file-completeness checks at ingestion, automated exception queues for failed or suspended transactions, daily reconciliation between the processing ledger and settlement/bank records, and controlled correction of identified discrepancies with output delivered only to authorized recipients.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "4"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "payment-operations---finance"
+            }
+          ],
+          "remarks": "For a payments company the completeness and accuracy of transaction processing is the core service commitment, so this control carries most of the Processing Integrity criteria"
+        },
+        {
+          "uuid": "79c0eae6-1a32-5990-9054-d4704cfa4a2e",
+          "control-id": "ctl-036",
+          "description": "Formally considers the potential for fraud \u2014 both external transaction fraud and internal fraud/misappropriation \u2014 in assessing risks to objectives, including fraud scenarios arising from AI-assisted decisioning and from management override of controls.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "head-of-risk---fraud-operations"
+            }
+          ],
+          "remarks": "The AI fraud scoring model (AI-001) appears here as both a fraud control and a source of fraud risk, which is why management override and AI-assisted decisioning are explicit scenarios"
+        },
+        {
+          "uuid": "a60a6cb5-8292-51f2-8436-23f20a40de07",
+          "control-id": "ctl-037",
+          "description": "Identifies, selects and develops risk mitigation activities for risks arising from potential business disruptions, including maintenance of cyber liability and errors-and-omissions insurance appropriate to the risk profile, and assessment of concentration risk in critical vendors.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "Implemented"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "head-of-risk---finance"
+            }
+          ],
+          "remarks": "Insurance and vendor concentration analysis are the mitigation activities least visible in a technical control set, so they are tracked explicitly here"
+        },
+        {
+          "uuid": "870d3e4a-c4f0-538c-bb5c-1f8e3aecb860",
+          "control-id": "ctl-038",
+          "description": "Assesses and documents the potential consequences of AI systems for individuals, groups of individuals, and society across the system life cycle. Assessments are performed before deployment, at planned intervals, and when significant changes are proposed; results are retained and feed risk treatment, human-oversight design, and the approval-to-deploy decision.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "2"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "ai-governance---privacy-office"
+            }
+          ],
+          "remarks": "Impact assessment is the requirement that most distinguishes an AI management system from an information security one; template is defined but completed assessments exist only for the fraud scoring and underwriting models"
+        },
+        {
+          "uuid": "9e8e8835-f866-54bd-8bf9-3ff8db3d4648",
+          "control-id": "ctl-039",
+          "description": "Establishes rules for the secure development of software and systems: security requirements identified and approved for applications, documented secure architecture and engineering principles, secure coding standards enforced through peer review, automated security testing in CI (static analysis, dependency and secret scanning, infrastructure-as-code policy checks), and security acceptance testing before release. Applies to ML pipelines and model-serving code as well as application code.",
+          "props": [
+            {
+              "name": "implementation-status",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "In Progress"
+            },
+            {
+              "name": "control-maturity",
+              "ns": "https://github.com/RookwoodRan/solidian-pay-grc",
+              "value": "3"
+            }
+          ],
+          "responsible-roles": [
+            {
+              "role-id": "engineering---application-security"
+            }
+          ],
+          "remarks": "Static analysis and dependency scanning run in CI and the infrastructure-as-code checks are enforced by the Rego policies in policy/rego; threat modelling is not yet a standard step for every service"
+        }
+      ]
+    }
+  }
+}

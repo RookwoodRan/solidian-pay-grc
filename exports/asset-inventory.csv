@@ -1,0 +1,13 @@
+Asset ID,Name,Category,Owner,Classification,Inherent Risk,Residual Risk,Controls
+AS-001,Multicloud Environment (AWS + Azure),Infrastructure,Cloud Platform,Confidential,High,Medium,CTL-004; CTL-005; CTL-008; CTL-009; CTL-010
+AS-002,Edge / Perimeter Security Platform,Infrastructure,Security Operations,Confidential,High,Medium,CTL-004; CTL-008; CTL-010
+AS-003,Payroll & HR Systems,Corporate IT,HR / People Ops,Restricted,High,Medium,CTL-004; CTL-010; CTL-012; CTL-024; CTL-030
+AS-004,Corporate Endpoints,Corporate IT,IT Operations,Internal,Medium,Low,CTL-004; CTL-008; CTL-009; CTL-033; CTL-034
+AS-005,CRM / Customer Data Platform,Application,Sales / Data,Restricted,High,Medium,CTL-004; CTL-010; CTL-024; CTL-028; CTL-039
+AS-006,Customer Website & Merchant Portal,Application,Engineering,Confidential,High,Medium,CTL-004; CTL-008; CTL-009; CTL-010; CTL-031; CTL-039
+AS-007,Physical Access / Badge System,Physical Security,Facilities,Internal,Medium,Low,CTL-004; CTL-010; CTL-032
+AS-008,Backup & Recovery Infrastructure,Infrastructure,IT Operations,Confidential,High,Medium,CTL-004; CTL-012
+AS-009,Network Firewalls & Security Appliances,Infrastructure,Security Operations,Confidential,High,Medium,CTL-004; CTL-008; CTL-009; CTL-010
+AS-010,ML Training & Feature Store Platform,AI / ML Infrastructure,Data Engineering,Restricted,High,Medium,CTL-004; CTL-020; CTL-024; CTL-039
+AS-011,Third-Party Foundation Model APIs,AI / ML Infrastructure,AI Governance / Vendor Risk,Confidential,High,Medium,CTL-019; CTL-021; CTL-025
+AS-012,Payment Processing & Ledger Platform,Application,Payment Operations,Restricted,High,Medium,CTL-004; CTL-010; CTL-013; CTL-027; CTL-035; CTL-036; CTL-039

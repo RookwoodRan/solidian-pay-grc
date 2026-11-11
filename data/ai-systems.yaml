@@ -1,0 +1,98 @@
+# Solidian Pay — AI System Inventory
+# Aligned to ISO/IEC 42001 Annex A.4.2 (resource documentation) and NIST AI RMF
+# GOVERN 1.6 / MAP 1.1 / MAP 5.1
+
+schema_version: "2.0"
+
+ai_systems:
+  - id: AI-001
+    name: Fraud Scoring Model
+    purpose: Real-time transaction fraud detection and scoring
+    model_type: Gradient-boosted ML model
+    risk_level: High
+    data_inputs: ["Transaction data", "Device fingerprint", "Historical account behavior"]
+    data_outputs: ["Fraud risk score (0-100)"]
+    human_oversight: HITL — analyst review required above risk threshold
+    monitoring: ["Drift detection", "Accuracy tracking", "Fairness metrics (CTL-015)"]
+    third_party: false
+    lifecycle_stage: Production
+    owner: Risk
+    controls: [CTL-014, CTL-015, CTL-016, CTL-018, CTL-020, CTL-036, CTL-038]
+    evidence_required: ["Model card", "Fairness metric reports", "HITL override logs"]
+
+  - id: AI-002
+    name: Underwriting Decision Support
+    purpose: Supports credit and merchant underwriting decisions
+    model_type: ML + rules hybrid
+    risk_level: High
+    data_inputs: ["Credit bureau data", "Business financials", "Transaction history"]
+    data_outputs: ["Decision recommendation + rationale"]
+    human_oversight: HOTL — underwriter approves all declines and high-value approvals
+    monitoring: ["Threshold monitoring", "Quarterly disparate-impact review"]
+    third_party: false
+    lifecycle_stage: Production
+    owner: Credit Risk
+    controls: [CTL-014, CTL-015, CTL-016, CTL-017, CTL-020, CTL-038]
+    evidence_required: ["Model card", "Adverse-action rationale logs", "Disparate-impact test results"]
+
+  - id: AI-003
+    name: KYC & Document Review Assistant
+    purpose: Automates extraction and anomaly flagging in identity/KYC document review
+    model_type: Vision + LLM hybrid
+    risk_level: High
+    data_inputs: ["Government ID images", "Proof-of-address documents"]
+    data_outputs: ["Extracted fields", "Anomaly/fraud flags"]
+    human_oversight: HITL — all flagged and a sample of unflagged cases reviewed by compliance analyst
+    monitoring: ["False-negative sampling audit", "Extraction accuracy tracking"]
+    third_party: false
+    lifecycle_stage: Production
+    owner: Compliance Operations
+    controls: [CTL-014, CTL-015, CTL-016, CTL-022, CTL-024, CTL-038]
+    evidence_required: ["Model card", "Sampling audit results", "PII handling assessment"]
+
+  - id: AI-004
+    name: Customer Support Copilot
+    purpose: Assists support agents with suggested responses and case summarization
+    model_type: Third-party LLM (foundation model API)
+    risk_level: Medium
+    data_inputs: ["Customer chat/ticket text"]
+    data_outputs: ["Suggested response drafts", "Case summaries"]
+    human_oversight: Post-hoc — agent reviews and edits before sending; no auto-send
+    monitoring: ["Response quality sampling", "PII leakage scanning"]
+    third_party: true
+    vendor: External foundation-model provider (see AS-011)
+    lifecycle_stage: Production
+    owner: Customer Support
+    controls: [CTL-016, CTL-019, CTL-021, CTL-025, CTL-038]
+    evidence_required: ["Vendor due-diligence file", "Sampling QA results", "DPA / data handling terms"]
+
+  - id: AI-005
+    name: Engineering Copilot
+    purpose: Developer coding assistance (autocomplete, code review suggestions)
+    model_type: Third-party LLM (foundation model API)
+    risk_level: Low
+    data_inputs: ["Source code", "Code comments"]
+    data_outputs: ["Code suggestions"]
+    human_oversight: None required — developer reviews all suggestions before commit (standard code review)
+    monitoring: ["License/IP scanning of suggested code"]
+    third_party: true
+    vendor: External foundation-model provider (see AS-011)
+    lifecycle_stage: Production
+    owner: Engineering
+    controls: [CTL-019]
+    evidence_required: ["Vendor terms review", "Source-code exclusion list (no secrets/customer data in prompts)"]
+
+  - id: AI-006
+    name: Operations Alert Triage
+    purpose: Classifies and routes operational alerts and support cases to the correct queue
+    model_type: ML classifier
+    risk_level: Low
+    data_inputs: ["Alert metadata", "Case text"]
+    data_outputs: ["Routing decision", "Priority label"]
+    human_oversight: None required — misrouted items are self-correcting via queue re-triage
+    monitoring: ["Routing accuracy sampling"]
+    third_party: false
+    lifecycle_stage: Pilot
+    owner: Operations
+    controls: [CTL-014, CTL-018]
+    evidence_required: ["Model card", "Pilot evaluation report"]

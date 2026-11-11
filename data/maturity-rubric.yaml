@@ -1,0 +1,18 @@
+# Solidian Pay — Maturity Rubric
+# Referenced by control_maturity / evidence_maturity fields in controls.yaml
+
+schema_version: "2.0"
+
+control_maturity:
+  1: {label: Initial, description: "Controls informal or inconsistently applied; no documented procedures; reactive; unclear ownership; no metrics."}
+  2: {label: Developing, description: "Controls partially documented but inconsistently followed; limited standardization; tooling exists but not fully configured; coverage gaps."}
+  3: {label: Defined, description: "Controls fully documented with clear owners; standardized and repeatable; tooling implemented but needs tuning; metrics defined but not consistently reviewed."}
+  4: {label: Managed, description: "Controls consistently implemented and monitored; evidence produced on a defined cadence; tooling integrated with alerting; KPIs/KRIs tracked; exceptions formally logged."}
+  5: {label: Optimized, description: "Controls automated where possible; continuous improvement cycle; predictive analytics; benchmarking; governance-driven enhancements."}
+
+evidence_maturity:
+  1: {label: Initial, description: "Evidence missing or incomplete; ad hoc collection; no versioning/timestamps; limited traceability."}
+  2: {label: Developing, description: "Evidence exists but inconsistent or outdated; manually collected; limited traceability."}
+  3: {label: Defined, description: "Evidence collected on a predictable schedule; standardized formats; versioning and timestamps present; lacks trend analysis."}
+  4: {label: Managed, description: "Evidence complete, accurate, and consistently maintained; automated or semi-automated collection; clear lineage; shows trend data."}
+  5: {label: Optimized, description: "Evidence fully automated and audit-ready; real-time dashboards; anomaly detection; strong governance linkage."}

@@ -1,0 +1,889 @@
+# Solidian Pay — Unified Control Library
+# Source of truth for the GRC & AI Governance Suite. Every other artifact
+# (OSCAL catalog, Rego policies, the workbook, dashboards) is generated FROM
+# this file — do not hand-edit downstream copies.
+#
+# Framework key:
+#   soc2        -> AICPA SOC 2 Trust Services Criteria (TSP section 100, 2017
+#                  criteria with 2022 revised points of focus). All five
+#                  categories are in scope for this control library:
+#                    CC1-CC9  Common Criteria (Security)
+#                    A1.x     Availability
+#                    C1.x     Confidentiality
+#                    PI1.x    Processing Integrity
+#                    P1-P8    Privacy
+#   iso27001    -> ISO/IEC 27001:2022. Plain numbers are management-system
+#                  clauses (e.g. 6.1.2); "A."-prefixed values are Annex A
+#                  controls (e.g. A.8.5).
+#   iso42001    -> ISO/IEC 42001:2023, same convention: plain numbers are
+#                  clauses (e.g. 6.1.4), "A."-prefixed values are Annex A
+#                  controls (e.g. A.6.2.4).
+#   nist_ai_rmf -> NIST AI RMF 1.0 subcategory (GOVERN/MAP/MEASURE/MANAGE)
+#   nist_csf    -> NIST CSF 2.0 subcategory (2.0 adds GOVERN as a function)
+#
+# Mapping rule: a framework reference is recorded only where the control
+# description itself satisfies that clause, control or criterion. Controls are
+# deliberately left unmapped against frameworks they do not genuinely address —
+# a control with no AI-specific function carries no AI RMF or ISO 42001
+# reference.
+#
+# maturity levels 1-5 map to /data/maturity-rubric.yaml (Initial..Optimized)
+
+schema_version: "2.0"
+organization: "Solidian Pay Financial Technologies, Inc."
+
+controls:
+
+  - id: CTL-001
+    name: Information Security & AI Governance Policy
+    domain: Governance
+    description: >
+      Establishes and maintains the top-level ISMS/AIMS policy set: security
+      objectives, AI governance principles, scope statements, integrity and
+      ethical-conduct expectations, and management commitment. Approved by the
+      board and reviewed at least annually or on material change.
+    control_type: Preventive
+    owner: CISO / Head of AI Governance
+    frameworks:
+      soc2: ["CC1.1", "CC1.2", "CC5.1", "CC5.3"]
+      iso27001: ["A.5.1", "5.2", "5.1"]
+      iso42001: ["5.2", "5.3", "6.2"]
+      nist_ai_rmf: ["GOVERN 1.1", "GOVERN 1.2"]
+      nist_csf: ["GV.OC-01", "GV.PO-01"]
+    evidence_required: "Signed policy set; version history; annual review record; board approval minutes; code of conduct acknowledgements"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 3
+    notes: "Policy set unified across security and AI governance rather than run as parallel programs"
+
+  - id: CTL-002
+    name: Risk Management Framework
+    domain: Governance
+    description: >
+      Defines the enterprise risk methodology (likelihood x impact scoring,
+      inherent/residual treatment) applied consistently to security, privacy,
+      processing-integrity and AI system risk, including assessment of the
+      risk arising from significant change to the system or environment.
+    control_type: Preventive
+    owner: Head of Risk
+    frameworks:
+      soc2: ["CC3.1", "CC3.2", "CC3.4"]
+      iso27001: ["6.1.2", "6.1.3"]
+      iso42001: ["6.1.2", "6.1.3"]
+      nist_ai_rmf: ["GOVERN 1.3", "GOVERN 1.5"]
+      nist_csf: ["GV.RM-01", "ID.RA-05"]
+    evidence_required: "Risk methodology doc; risk register; treatment plans; change-driven reassessment records; management review minutes"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 3
+    notes: "Single risk register covers security, privacy, processing integrity and AI risk lines"
+
+  - id: CTL-003
+    name: Roles, Responsibilities & Segregation of Duties
+    domain: Governance
+    description: >
+      Defines accountable owners for the ISMS, AIMS, each material AI use
+      case, and each control; establishes reporting lines and holds individuals
+      accountable for control responsibilities; enforces segregation between AI
+      system development, risk assessment, and approval-to-deploy functions.
+    control_type: Preventive
+    owner: COO / Chief of Staff
+    frameworks:
+      soc2: ["CC1.3", "CC1.5"]
+      iso27001: ["A.5.2", "A.5.3"]
+      iso42001: ["5.3", "A.3.2"]
+      nist_ai_rmf: ["GOVERN 2.1"]
+      nist_csf: ["GV.RR-01", "GV.RR-02"]
+    evidence_required: "RACI matrix; org chart; delegation of authority records; control-owner attestations"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "AI use-case owners formally distinct from the engineering teams that build the models"
+
+  - id: CTL-004
+    name: Access Control & Least Privilege
+    domain: Access & Identity
+    description: >
+      Enforces role-based, least-privilege access to systems, data, and
+      model/training environments; MFA required for all privileged and
+      remote access; periodic user access reviews performed.
+    control_type: Preventive
+    owner: IT Security
+    frameworks:
+      soc2: ["CC6.1", "CC6.2", "CC6.3"]
+      iso27001: ["A.5.15", "A.8.2", "A.8.3", "A.8.5"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.AA-01", "PR.AA-03", "PR.AA-05"]
+    evidence_required: "RBAC configs; quarterly access review sign-offs; MFA enforcement reports"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 4
+    notes: "Carried forward from original control library (CL-001); MFA enforced org-wide"
+
+  - id: CTL-005
+    name: Privileged Access Management
+    domain: Access & Identity
+    description: >
+      Just-in-time elevation, session recording, and periodic recertification
+      for administrative access to cloud, database, and model-training
+      infrastructure.
+    control_type: Preventive
+    owner: IT Security
+    frameworks:
+      soc2: ["CC6.1", "CC6.3"]
+      iso27001: ["A.8.2"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.AA-05"]
+    evidence_required: "PAM tool config; session logs; quarterly recertification records"
+    implementation_status: In Progress
+    control_maturity: 3
+    evidence_maturity: 2
+    notes: "PAM tool deployed for cloud; database tier recertification still manual"
+
+  - id: CTL-006
+    name: Identity Lifecycle Management
+    domain: Access & Identity
+    description: >
+      Automates registration, authorization, modification and removal of
+      employee and contractor access on join, role change, and termination.
+    control_type: Preventive
+    owner: IT Security
+    frameworks:
+      soc2: ["CC6.2", "CC6.3"]
+      iso27001: ["A.5.16", "A.5.18", "A.6.5"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.AA-01"]
+    evidence_required: "HRIS-to-IAM integration logs; termination checklist completion records; same-day revocation metrics"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 3
+    notes: ""
+
+  - id: CTL-007
+    name: Asset Inventory & Data Classification
+    domain: Asset Management
+    description: >
+      Maintains a current inventory of information assets and AI systems with
+      data-sensitivity and criticality classification, including identification
+      of information designated confidential and the handling rules that follow
+      from each classification tier.
+    control_type: Preventive
+    owner: IT Operations
+    frameworks:
+      soc2: ["CC6.1", "C1.1"]
+      iso27001: ["A.5.9", "A.5.12", "A.5.13"]
+      iso42001: []
+      nist_ai_rmf: ["GOVERN 1.6"]
+      nist_csf: ["ID.AM-01", "ID.AM-02", "ID.AM-05", "ID.AM-07"]
+    evidence_required: "Asset inventory export; classification labels; ownership assignments; confidential-data handling standard"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 4
+    notes: "Includes cloud, endpoint, and AI-system assets in one register"
+
+  - id: CTL-008
+    name: Secure Configuration & Boundary Protection
+    domain: Asset Management
+    description: >
+      Defines and enforces hardened baseline configurations for cloud accounts,
+      endpoints, and network appliances; implements boundary protection
+      (firewalls, WAF, segmentation) against external threats; configuration
+      drift is detected and remediated.
+    control_type: Preventive
+    owner: IT Operations
+    frameworks:
+      soc2: ["CC5.2", "CC6.6", "CC7.1"]
+      iso27001: ["A.8.9", "A.8.20", "A.8.22"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.PS-01", "PR.IR-01"]
+    evidence_required: "Config baselines; CSPM drift reports; firewall rule reviews; remediation tickets"
+    implementation_status: In Progress
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "Cloud baseline strong (AWS + Azure CSPM); endpoint baseline lagging"
+
+  - id: CTL-009
+    name: Vulnerability Management
+    domain: Asset Management
+    description: >
+      Continuous scanning, risk-based prioritization, and patching of
+      infrastructure and application vulnerabilities, including dependencies
+      used by AI/ML pipelines; penetration testing performed annually.
+    control_type: Preventive
+    owner: IT Security
+    frameworks:
+      soc2: ["CC7.1"]
+      iso27001: ["A.8.8"]
+      iso42001: []
+      nist_ai_rmf: ["MEASURE 2.7"]
+      nist_csf: ["ID.RA-01", "PR.PS-02"]
+    evidence_required: "Scan reports; SLA-to-patch metrics; annual pentest report; exception register"
+    implementation_status: In Progress
+    control_maturity: 3
+    evidence_maturity: 2
+    notes: "SLA compliance improving quarter over quarter"
+
+  - id: CTL-010
+    name: Logging & Security Monitoring
+    domain: Detection & Response
+    description: >
+      Centralized log collection, correlation, and alerting across
+      infrastructure, applications, and AI inference endpoints; anomalies are
+      detected and routed for evaluation.
+    control_type: Detective
+    owner: Security Operations
+    frameworks:
+      soc2: ["CC7.2"]
+      iso27001: ["A.8.15", "A.8.16"]
+      iso42001: ["A.6.2.8"]
+      nist_ai_rmf: ["MEASURE 2.4", "MANAGE 4.1"]
+      nist_csf: ["DE.CM-01", "DE.CM-09"]
+    evidence_required: "SIEM logs; alert-to-triage-time metrics; tuning records"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 4
+    notes: "SIEM ingests model-serving logs alongside infra logs"
+
+  - id: CTL-011
+    name: Incident Response & Management
+    domain: Detection & Response
+    description: >
+      Documented incident response plan covering evaluation, containment,
+      remediation and recovery for security incidents and AI-specific incidents
+      (harmful output, safety violation, model compromise), with defined
+      escalation, breach notification obligations, and post-incident review.
+    control_type: Corrective
+    owner: Security Operations
+    frameworks:
+      soc2: ["CC7.3", "CC7.4", "CC7.5", "P6.5", "P6.6"]
+      iso27001: ["A.5.24", "A.5.25", "A.5.26", "A.5.27", "A.6.8"]
+      iso42001: ["10.2", "A.8.4"]
+      nist_ai_rmf: ["GOVERN 4.3", "MANAGE 4.1", "MANAGE 4.3"]
+      nist_csf: ["RS.MA-01", "RS.AN-03", "RC.RP-01"]
+    evidence_required: "IR plan; tabletop exercise records; incident tickets; breach notification records; post-incident reviews"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "AI-incident escalation path added Q2 2026; one tabletop exercise completed"
+
+  - id: CTL-012
+    name: Backup, Recovery & Business Continuity
+    domain: Resilience
+    description: >
+      Ensures data and model-artifact resilience through encrypted backups,
+      periodic restore testing, and a documented, tested business continuity
+      and disaster recovery plan.
+    control_type: Corrective
+    owner: IT Operations
+    frameworks:
+      soc2: ["A1.2", "A1.3", "CC7.5", "PI1.5"]
+      iso27001: ["A.8.13", "A.8.14", "A.5.29", "A.5.30"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.DS-11", "RC.RP-01"]
+    evidence_required: "Backup logs; quarterly restore test results; BCP/DR plan; annual DR exercise report"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 4
+    notes: "Includes trained model artifacts and feature store snapshots, not just databases"
+
+  - id: CTL-013
+    name: Change Management
+    domain: Detection & Response
+    description: >
+      Controlled change process for production systems and for model
+      releases/retraining, including risk assessment of significant changes,
+      segregation between developer and approver, rollback plans, and
+      pre-deployment review.
+    control_type: Preventive
+    owner: Engineering
+    frameworks:
+      soc2: ["CC8.1", "CC3.4"]
+      iso27001: ["A.8.32", "A.8.31"]
+      iso42001: ["A.6.2.5"]
+      nist_ai_rmf: ["MANAGE 2.4"]
+      nist_csf: ["ID.RA-07"]
+    evidence_required: "Change tickets; approval records; separation-of-duties evidence; model release notes"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "Model releases go through the same CAB gate as application changes"
+
+  - id: CTL-014
+    name: AI System Inventory & Risk Classification
+    domain: AI Governance
+    description: >
+      Maintains a complete inventory of AI systems (internally built and
+      third-party) with purpose, model type, and a risk-tiering method
+      consistent with ISO 42001 and NIST AI RMF MAP function.
+    control_type: Preventive
+    owner: AI Governance
+    frameworks:
+      soc2: []
+      iso27001: []
+      iso42001: ["8.2", "A.4.2"]
+      nist_ai_rmf: ["GOVERN 1.6", "MAP 1.1", "MAP 1.5", "MAP 5.1"]
+      nist_csf: ["ID.AM-02", "ID.AM-08"]
+    evidence_required: "AI system inventory; risk-tier assignment rationale; approval records"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 3
+    notes: "Inventory covers fraud scoring, underwriting, KYC review, support copilot, engineering copilot"
+
+  - id: CTL-015
+    name: AI Risk Assessment (Bias, Fairness, Robustness)
+    domain: AI Governance
+    description: >
+      Pre-deployment and periodic assessment of AI systems for statistical
+      bias, disparate impact, adversarial robustness, and safety failure
+      modes, with defined risk-acceptance thresholds.
+    control_type: Preventive
+    owner: AI Governance
+    frameworks:
+      soc2: []
+      iso27001: []
+      iso42001: ["6.1.2", "6.1.3", "8.2", "A.5.4", "A.6.2.4"]
+      nist_ai_rmf: ["MAP 2.3", "MEASURE 2.3", "MEASURE 2.6", "MEASURE 2.11"]
+      nist_csf: ["ID.RA-04"]
+    evidence_required: "Fairness metric reports; adversarial test results; risk-acceptance sign-off"
+    implementation_status: In Progress
+    control_maturity: 3
+    evidence_maturity: 2
+    notes: "Fairness metrics defined for fraud and underwriting models; not yet extended to KYC review model"
+
+  - id: CTL-016
+    name: Human Oversight of AI Systems
+    domain: AI Governance
+    description: >
+      Ensures human-in-the-loop or human-on-the-loop review is designed into
+      AI systems commensurate with risk tier, with defined override
+      authority and escalation paths.
+    control_type: Preventive
+    owner: Product / AI Governance
+    frameworks:
+      soc2: []
+      iso27001: []
+      iso42001: ["A.3.2", "A.6.1.3", "A.9.2"]
+      nist_ai_rmf: ["GOVERN 3.2", "MAP 3.5"]
+      nist_csf: []
+    evidence_required: "Oversight model documentation; override logs; approval records"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 3
+    notes: "High-risk systems (fraud, underwriting) run HITL; low-risk engineering copilot runs unsupervised by design"
+
+  - id: CTL-017
+    name: AI Transparency & Explainability
+    domain: AI Governance
+    description: >
+      Provides documented model cards / system cards, decision-rationale
+      capability for customer-impacting decisions, and disclosure to
+      affected individuals where required.
+    control_type: Preventive
+    owner: AI Governance
+    frameworks:
+      soc2: ["PI1.1"]
+      iso27001: []
+      iso42001: ["A.7.5", "A.8.2", "A.8.5"]
+      nist_ai_rmf: ["GOVERN 4.2", "MEASURE 2.8", "MEASURE 2.9"]
+      nist_csf: []
+    evidence_required: "Model/system cards; customer-facing disclosure copy; explainability tooling output"
+    implementation_status: In Progress
+    control_maturity: 2
+    evidence_maturity: 2
+    notes: "System cards exist for fraud and underwriting models only"
+
+  - id: CTL-018
+    name: AI Performance & Drift Monitoring
+    domain: AI Governance
+    description: >
+      Ongoing monitoring of AI system accuracy, calibration, and data/concept
+      drift in production, with defined thresholds that trigger review or
+      rollback.
+    control_type: Detective
+    owner: AI Governance / Data Science
+    frameworks:
+      soc2: []
+      iso27001: []
+      iso42001: ["A.6.2.6"]
+      nist_ai_rmf: ["MEASURE 2.4", "MEASURE 2.5", "MANAGE 2.4", "MANAGE 4.1"]
+      nist_csf: ["DE.CM-09"]
+    evidence_required: "Drift dashboards; alert thresholds; quarterly model review minutes"
+    implementation_status: In Progress
+    control_maturity: 3
+    evidence_maturity: 2
+    notes: "Drift dashboard live for fraud model; underwriting model still manual quarterly review"
+
+  - id: CTL-019
+    name: Third-Party & Vendor AI Oversight
+    domain: AI Governance
+    description: >
+      Due diligence, contractual controls, and ongoing monitoring of
+      third-party AI/foundation-model providers embedded in Solidian Pay
+      products (e.g. the customer support copilot).
+    control_type: Preventive
+    owner: Vendor Risk Management
+    frameworks:
+      soc2: ["CC9.2", "P6.4"]
+      iso27001: ["A.5.19", "A.5.20", "A.5.21", "A.5.22"]
+      iso42001: ["A.10.2", "A.10.3"]
+      nist_ai_rmf: ["GOVERN 6.1", "MAP 4.1", "MANAGE 3.1"]
+      nist_csf: ["GV.SC-06", "GV.SC-07"]
+    evidence_required: "Vendor due-diligence questionnaires; contract clauses; ongoing monitoring reports"
+    implementation_status: In Progress
+    control_maturity: 2
+    evidence_maturity: 2
+    notes: "RFI/RFP lifecycle (see /docs/rfi-rfp) is the flagship example of this control operating end-to-end"
+
+  - id: CTL-020
+    name: Data Quality & Governance for AI
+    domain: AI Governance
+    description: >
+      Ensures training and inference data used by AI systems is accurate,
+      representative, complete, and lineage-tracked; addresses data quality
+      issues that could produce biased or unsafe outputs.
+    control_type: Preventive
+    owner: Data Engineering
+    frameworks:
+      soc2: ["PI1.2", "P7.1"]
+      iso27001: []
+      iso42001: ["A.7.2", "A.7.3", "A.7.4", "A.7.5"]
+      nist_ai_rmf: ["MAP 2.3"]
+      nist_csf: []
+    evidence_required: "Data lineage documentation; data quality metrics; sampling audit results"
+    implementation_status: In Progress
+    control_maturity: 2
+    evidence_maturity: 2
+    notes: "Lineage mapping in progress for fraud model training data; not started for others"
+
+  - id: CTL-021
+    name: AI Incident Management
+    domain: AI Governance
+    description: >
+      Dedicated intake, triage, and remediation path for AI-specific
+      incidents (harmful/unsafe output, fairness violation, model
+      compromise) distinct from generic IT incident handling.
+    control_type: Corrective
+    owner: AI Governance / Security Operations
+    frameworks:
+      soc2: ["CC7.4"]
+      iso27001: []
+      iso42001: ["10.2", "A.3.3", "A.8.3", "A.8.4"]
+      nist_ai_rmf: ["GOVERN 4.3", "MANAGE 4.1", "MANAGE 4.3", "MEASURE 3.3"]
+      nist_csf: ["RS.MA-01"]
+    evidence_required: "AI incident log; root-cause analyses; corrective action tracking"
+    implementation_status: Not Started
+    control_maturity: 1
+    evidence_maturity: 1
+    notes: "Currently folded into generic IR process (CTL-011); dedicated AI track planned for Q1"
+
+  - id: CTL-022
+    name: Privacy Notice & Consent Management
+    domain: Privacy
+    description: >
+      Maintains accurate, accessible privacy notices describing the purposes
+      for which personal information is collected, used, retained and
+      disclosed; captures and honours choice and consent — including explicit
+      consent for sensitive information — for processing of personal data,
+      including data used in AI training and inference.
+    control_type: Preventive
+    owner: Privacy Office
+    frameworks:
+      soc2: ["P1.1", "P2.1", "P3.2"]
+      iso27001: ["A.5.34"]
+      iso42001: []
+      nist_ai_rmf: ["MEASURE 2.10"]
+      nist_csf: []
+    evidence_required: "Published privacy notices; consent-capture logs; explicit-consent records for sensitive data; withdrawal handling records"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "Notice covers AI-specific processing purposes for the fraud and underwriting models"
+
+  - id: CTL-023
+    name: Data Subject Access, Correction & Complaint Handling
+    domain: Privacy
+    description: >
+      Documented process and tooling for receiving, verifying, and fulfilling
+      data subject access, correction, deletion, and portability requests
+      within regulatory timeframes; handles and tracks privacy complaints and
+      monitors compliance with privacy commitments.
+    control_type: Corrective
+    owner: Privacy Office
+    frameworks:
+      soc2: ["P5.1", "P5.2", "P8.1"]
+      iso27001: []
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: []
+    evidence_required: "DSR intake logs; fulfillment timestamps; identity verification procedure; privacy complaint register and resolution records"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: ""
+
+  - id: CTL-024
+    name: PII Inventory, Minimization & Retention
+    domain: Privacy
+    description: >
+      Maintains a data map of personal information processed across systems
+      and AI pipelines; limits collection and use to the purposes disclosed in
+      the privacy notice; enforces minimization, accuracy, and defined
+      retention and disposal schedules.
+    control_type: Preventive
+    owner: Privacy Office
+    frameworks:
+      soc2: ["P3.1", "P4.1", "P4.2", "P4.3", "P7.1"]
+      iso27001: ["A.5.34", "A.8.10"]
+      iso42001: ["A.7.2"]
+      nist_ai_rmf: ["MAP 2.3", "MEASURE 2.10"]
+      nist_csf: ["ID.AM-07"]
+    evidence_required: "PII data map; retention schedule; deletion job logs; purpose-limitation review records"
+    implementation_status: In Progress
+    control_maturity: 2
+    evidence_maturity: 2
+    notes: "Data map complete for core banking systems; AI training data stores not yet mapped"
+
+  - id: CTL-025
+    name: Third-Party Disclosure & Cross-Border Transfer Controls
+    domain: Privacy
+    description: >
+      Governs disclosure of personal information to third parties: disclosures
+      are made only for disclosed purposes and with consent where required,
+      are recorded (including unauthorized disclosures), are covered by
+      contractual privacy commitments, and — for transfers between the US,
+      Canada and UK operations and to third-party AI providers — are supported
+      by a documented legal basis and transfer safeguards.
+    control_type: Preventive
+    owner: Legal / Privacy Office
+    frameworks:
+      soc2: ["P6.1", "P6.2", "P6.3", "P6.4", "P6.7"]
+      iso27001: ["A.5.14", "A.5.34"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["GV.SC-07"]
+    evidence_required: "Disclosure register; transfer impact assessments; executed SCCs/DPAs; vendor transfer inventory; accounting-of-disclosures records"
+    implementation_status: In Progress
+    control_maturity: 3
+    evidence_maturity: 2
+    notes: "Scoped around the SOC 2 Privacy P6 series: consent for disclosure, the disclosure register, records of unauthorized disclosure, and third-party privacy commitments, with cross-border transfer handled as one case within it"
+
+  - id: CTL-026
+    name: Vendor Risk Management
+    domain: Third-Party Risk
+    description: >
+      Risk-tiered due diligence, contracting, and ongoing monitoring for
+      non-AI third-party vendors and service providers, including review of
+      subservice organization SOC reports and complementary user entity
+      controls (excludes AI vendors, covered by CTL-019).
+    control_type: Preventive
+    owner: Vendor Risk Management
+    frameworks:
+      soc2: ["CC9.2", "P6.4"]
+      iso27001: ["A.5.19", "A.5.20", "A.5.21"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["GV.SC-06"]
+    evidence_required: "Vendor risk assessments; contract security addenda; subservice SOC report reviews; annual reassessment records"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "Includes review of subservice organization SOC reports and complementary user entity controls, which is what the carve-out vs inclusive method decision turns on"
+
+  - id: CTL-027
+    name: Availability & Capacity Management
+    domain: Resilience
+    description: >
+      Monitors and manages system capacity and availability against defined
+      service commitments and SLOs for customer-facing payment and AI
+      inference services; forecasts demand and provisions capacity ahead of it.
+    control_type: Detective
+    owner: Site Reliability Engineering
+    frameworks:
+      soc2: ["A1.1"]
+      iso27001: ["A.8.6"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.IR-04"]
+    evidence_required: "SLO dashboards; capacity planning reviews; uptime reports against committed SLA"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 3
+    notes: ""
+
+  - id: CTL-028
+    name: Encryption & Secure Data Transmission
+    domain: Asset Management
+    description: >
+      Enforces encryption in transit and at rest for customer, payment, and
+      model-training data; restricts and protects the transmission, movement
+      and removal of information to authorized internal and external users.
+    control_type: Preventive
+    owner: IT Security
+    frameworks:
+      soc2: ["CC6.7"]
+      iso27001: ["A.8.24", "A.5.14", "A.8.12"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.DS-01", "PR.DS-02"]
+    evidence_required: "Encryption configuration evidence; key management procedure; DLP rule set; TLS enforcement scans"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 4
+    notes: ""
+
+  - id: CTL-029
+    name: Internal Audit, Monitoring & Management Review
+    domain: Governance
+    description: >
+      Performs ongoing and separate evaluations of control effectiveness
+      (internal audit of the ISMS/AIMS and control self-assessment), evaluates
+      and communicates deficiencies to parties responsible for corrective
+      action, and runs a formal management review that consumes metrics,
+      incidents, and audit findings to drive continual improvement.
+    control_type: Detective
+    owner: Internal Audit
+    frameworks:
+      soc2: ["CC4.1", "CC4.2", "CC1.2", "P8.1"]
+      iso27001: ["9.2", "9.3", "10.1", "A.5.35", "A.5.36"]
+      iso42001: ["9.2", "9.3"]
+      nist_ai_rmf: ["GOVERN 1.5"]
+      nist_csf: ["GV.OV-02", "GV.OV-03", "ID.IM-01"]
+    evidence_required: "Internal audit plan and reports; deficiency log with owner and remediation date; management review minutes and action items"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "One internal audit cycle completed against the expanded control set"
+
+  - id: CTL-030
+    name: Personnel Screening, Competence & Security Awareness
+    domain: People & Awareness
+    description: >
+      Attracts, develops and retains competent personnel: background screening
+      proportionate to role sensitivity, defined competence requirements,
+      onboarding and annual security and privacy awareness training, role-based
+      training for AI and control owners, and a disciplinary process for
+      policy violations.
+    control_type: Preventive
+    owner: HR / People Ops
+    frameworks:
+      soc2: ["CC1.4", "CC1.5", "CC2.2", "CC5.3"]
+      iso27001: ["A.6.1", "A.6.2", "A.6.3", "A.6.4", "7.2", "7.3"]
+      iso42001: ["7.2", "7.3"]
+      nist_ai_rmf: ["GOVERN 2.2"]
+      nist_csf: ["GV.RR-04", "PR.AT-01", "PR.AT-02"]
+    evidence_required: "Background check records; job descriptions with competence criteria; training completion reports; disciplinary process document; AI-specific training records for model owners"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "Competence and accountability sit with HR rather than security, so they are controlled here rather than inside the policy control"
+
+  - id: CTL-031
+    name: Internal & External Communication of Commitments
+    domain: Governance
+    description: >
+      Generates and communicates quality information needed to support control
+      functioning: internal communication of objectives, policies and control
+      responsibilities, and external communication to customers and other
+      parties of service commitments, system requirements, processing quality
+      objectives, security practices, and the channel for reporting failures
+      and complaints.
+    control_type: Preventive
+    owner: Compliance / Communications
+    frameworks:
+      soc2: ["CC2.1", "CC2.2", "CC2.3", "PI1.1"]
+      iso27001: ["A.5.1", "7.4", "A.6.8"]
+      iso42001: ["7.4"]
+      nist_ai_rmf: ["GOVERN 4.2", "GOVERN 5.1"]
+      nist_csf: ["GV.RR-01", "GV.OC-02"]
+    evidence_required: "Customer-facing trust/security page; published SLAs and processing commitments; internal policy acknowledgement records; incident and complaint reporting channel documentation; management reporting pack"
+    implementation_status: In Progress
+    control_maturity: 3
+    evidence_maturity: 2
+    notes: "Covers both directions of communication: control responsibilities communicated internally, and service commitments and the failure-reporting channel communicated externally"
+
+  - id: CTL-032
+    name: Physical & Environmental Security
+    domain: Physical Security
+    description: >
+      Restricts physical access to facilities and protected information assets
+      to authorized personnel, and maintains environmental protections (power,
+      fire suppression, climate control) for on-premises infrastructure
+      supporting availability commitments.
+    control_type: Preventive
+    owner: Facilities / IT Operations
+    frameworks:
+      soc2: ["CC6.4", "A1.2"]
+      iso27001: ["A.7.1", "A.7.2", "A.7.3", "A.7.4", "A.7.5", "A.7.8", "A.7.11"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.AA-06", "PR.IR-02"]
+    evidence_required: "Badge access logs; visitor register; quarterly physical access review; environmental monitoring and UPS/fire-suppression test records; cloud provider facility attestations"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "Most production infrastructure is cloud-hosted, so this control relies partly on subservice organization attestations (see CTL-026); the corporate offices remain in scope directly"
+
+  - id: CTL-033
+    name: Secure Disposal of Media & Confidential Information
+    domain: Physical Security
+    description: >
+      Securely decommissions and disposes of physical media, endpoints and
+      storage containing confidential information and personal data, with
+      certificates of destruction and verified cryptographic erasure for cloud
+      storage.
+    control_type: Preventive
+    owner: IT Operations
+    frameworks:
+      soc2: ["CC6.5", "C1.2", "P4.3"]
+      iso27001: ["A.7.10", "A.7.14", "A.8.10"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["ID.AM-08"]
+    evidence_required: "Asset decommissioning log; certificates of destruction; cryptographic erasure confirmations; media sanitization procedure"
+    implementation_status: In Progress
+    control_maturity: 2
+    evidence_maturity: 2
+    notes: "Vendor destruction certificates are not yet consistently retained, which is the main evidence weakness in this control"
+
+  - id: CTL-034
+    name: Endpoint & Malware Protection
+    domain: Asset Management
+    description: >
+      Deploys and maintains endpoint detection and response, anti-malware,
+      and email/web filtering controls across corporate endpoints and servers
+      to prevent and detect the introduction of malicious software.
+    control_type: Preventive
+    owner: IT Security
+    frameworks:
+      soc2: ["CC6.8"]
+      iso27001: ["A.8.1", "A.8.7", "A.8.23"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["DE.CM-09", "PR.PS-05"]
+    evidence_required: "EDR deployment coverage report; signature/agent currency metrics; quarantine and remediation logs; phishing simulation results"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 3
+    notes: "Covers the corporate endpoint estate and servers; cloud workload protection is handled under CTL-008"
+
+  - id: CTL-035
+    name: Transaction Processing Integrity & Reconciliation
+    domain: Processing Integrity
+    description: >
+      Ensures payment and ledger processing is complete, valid, accurate,
+      timely and authorized: input validation and file-completeness checks at
+      ingestion, automated exception queues for failed or suspended
+      transactions, daily reconciliation between the processing ledger and
+      settlement/bank records, and controlled correction of identified
+      discrepancies with output delivered only to authorized recipients.
+    control_type: Detective
+    owner: Payment Operations / Finance
+    frameworks:
+      soc2: ["PI1.2", "PI1.3", "PI1.4", "PI1.5"]
+      iso27001: ["A.8.26"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.DS-01"]
+    evidence_required: "Daily reconciliation reports with sign-off; exception queue aging report; input validation rule set; settlement break log and resolution evidence; output distribution authorization matrix"
+    implementation_status: Implemented
+    control_maturity: 4
+    evidence_maturity: 3
+    notes: "For a payments company the completeness and accuracy of transaction processing is the core service commitment, so this control carries most of the Processing Integrity criteria"
+
+  - id: CTL-036
+    name: Fraud Risk Assessment
+    domain: Processing Integrity
+    description: >
+      Formally considers the potential for fraud — both external transaction
+      fraud and internal fraud/misappropriation — in assessing risks to
+      objectives, including fraud scenarios arising from AI-assisted
+      decisioning and from management override of controls.
+    control_type: Preventive
+    owner: Head of Risk / Fraud Operations
+    frameworks:
+      soc2: ["CC3.3"]
+      iso27001: ["6.1.2"]
+      iso42001: ["6.1.2"]
+      nist_ai_rmf: ["MAP 5.1"]
+      nist_csf: ["ID.RA-04"]
+    evidence_required: "Annual fraud risk assessment; fraud scenario register; management override monitoring evidence; fraud loss and attempted-fraud reporting"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "The AI fraud scoring model (AI-001) appears here as both a fraud control and a source of fraud risk, which is why management override and AI-assisted decisioning are explicit scenarios"
+
+  - id: CTL-037
+    name: Business Disruption Risk Mitigation & Insurance
+    domain: Resilience
+    description: >
+      Identifies, selects and develops risk mitigation activities for risks
+      arising from potential business disruptions, including maintenance of
+      cyber liability and errors-and-omissions insurance appropriate to the
+      risk profile, and assessment of concentration risk in critical vendors.
+    control_type: Corrective
+    owner: Head of Risk / Finance
+    frameworks:
+      soc2: ["CC9.1"]
+      iso27001: ["A.5.29", "A.5.30"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["GV.RM-05", "ID.IM-04"]
+    evidence_required: "Business disruption risk assessment; insurance policy schedule and renewal records; vendor concentration analysis; residual risk acceptance records"
+    implementation_status: Implemented
+    control_maturity: 3
+    evidence_maturity: 3
+    notes: "Insurance and vendor concentration analysis are the mitigation activities least visible in a technical control set, so they are tracked explicitly here"
+
+  - id: CTL-038
+    name: AI System Impact Assessment
+    domain: AI Governance
+    description: >
+      Assesses and documents the potential consequences of AI systems for
+      individuals, groups of individuals, and society across the system life
+      cycle. Assessments are performed before deployment, at planned intervals,
+      and when significant changes are proposed; results are retained and feed
+      risk treatment, human-oversight design, and the approval-to-deploy
+      decision.
+    control_type: Preventive
+    owner: AI Governance / Privacy Office
+    frameworks:
+      soc2: []
+      iso27001: []
+      iso42001: ["6.1.4", "8.4", "A.5.2", "A.5.3", "A.5.4", "A.5.5"]
+      nist_ai_rmf: ["MAP 5.1", "MAP 5.2"]
+      nist_csf: ["ID.RA-04"]
+    evidence_required: "Impact assessment methodology and template; completed assessments per AI system; reviewer and approver sign-off; change-triggered reassessment log; assessment retention records"
+    implementation_status: In Progress
+    control_maturity: 2
+    evidence_maturity: 2
+    notes: "Impact assessment is the requirement that most distinguishes an AI management system from an information security one; template is defined but completed assessments exist only for the fraud scoring and underwriting models"
+
+  - id: CTL-039
+    name: Secure Development Lifecycle
+    domain: Secure Development
+    description: >
+      Establishes rules for the secure development of software and systems:
+      security requirements identified and approved for applications,
+      documented secure architecture and engineering principles, secure coding
+      standards enforced through peer review, automated security testing in CI
+      (static analysis, dependency and secret scanning, infrastructure-as-code
+      policy checks), and security acceptance testing before release. Applies
+      to ML pipelines and model-serving code as well as application code.
+    control_type: Preventive
+    owner: Engineering / Application Security
+    frameworks:
+      soc2: ["CC8.1"]
+      iso27001: ["A.8.25", "A.8.26", "A.8.27", "A.8.28", "A.8.29"]
+      iso42001: []
+      nist_ai_rmf: []
+      nist_csf: ["PR.PS-06"]
+    evidence_required: "Secure coding standard; security requirements and threat model records; CI scan reports (SAST, dependency, secret, IaC); code review records; pre-release security test sign-offs; test data handling procedure"
+    implementation_status: In Progress
+    control_maturity: 3
+    evidence_maturity: 2
+    notes: "Static analysis and dependency scanning run in CI and the infrastructure-as-code checks are enforced by the Rego policies in policy/rego; threat modelling is not yet a standard step for every service"

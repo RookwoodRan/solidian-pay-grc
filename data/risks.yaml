@@ -1,0 +1,214 @@
+# Solidian Pay — Risk Register
+# Scoring: Likelihood (1-5) x Impact (1-5) = Score. Heat map and treatment plan
+# are derived from this file — see /dashboards and /workbook.
+
+schema_version: "2.0"
+
+risks:
+  - id: R-001
+    asset: AS-001
+    description: Cross-cloud IAM misconfiguration leads to unauthorized data access or breach
+    inherent_likelihood: 5
+    inherent_impact: 5
+    inherent_score: 25
+    residual_likelihood: 3
+    residual_impact: 4
+    residual_score: 12
+    owner: Cloud Platform
+    controls: [CTL-004, CTL-005, CTL-008, CTL-010]
+    treatment: Mitigate
+    treatment_actions:
+      - "Implement unified IAM baseline across AWS and Azure (CTL-008)"
+      - "Enable continuous posture monitoring / CSPM (CTL-010)"
+      - "Enforce MFA and JIT elevation for cloud admin roles (CTL-004, CTL-005)"
+    due_date: "2026-11-30"
+    status: In Progress
+
+  - id: R-002
+    asset: AS-005
+    description: Weak RBAC on CRM leads to unauthorized access to merchant/customer data
+    inherent_likelihood: 4
+    inherent_impact: 5
+    inherent_score: 20
+    residual_likelihood: 2
+    residual_impact: 4
+    residual_score: 8
+    owner: Sales
+    controls: [CTL-004, CTL-024, CTL-028]
+    treatment: Mitigate
+    treatment_actions:
+      - "CRM RBAC review; remove over-permissioned roles (CTL-004)"
+      - "Enforce MFA for all CRM users and admins (CTL-004)"
+      - "Encrypt CRM exports and apply masking (CTL-028)"
+    due_date: "2026-10-15"
+    status: In Progress
+
+  - id: R-003
+    asset: AS-009
+    description: Firewall rule misconfiguration allows network intrusion
+    inherent_likelihood: 5
+    inherent_impact: 4
+    inherent_score: 20
+    residual_likelihood: 3
+    residual_impact: 3
+    residual_score: 9
+    owner: Security Operations
+    controls: [CTL-008, CTL-009, CTL-010]
+    treatment: Mitigate
+    treatment_actions:
+      - "Quarterly firewall rule review and baseline update (CTL-008)"
+      - "Integrate firewall logging with SIEM (CTL-010)"
+      - "Patch firmware vulnerabilities (CTL-009)"
+    due_date: "2026-11-01"
+    status: Not Started
+
+  - id: R-004
+    asset: AI-001
+    description: Fraud scoring model exhibits bias or performance drift, producing unfair or inaccurate decisions
+    inherent_likelihood: 4
+    inherent_impact: 5
+    inherent_score: 20
+    residual_likelihood: 3
+    residual_impact: 4
+    residual_score: 12
+    owner: AI Governance
+    controls: [CTL-015, CTL-016, CTL-018]
+    treatment: Mitigate
+    treatment_actions:
+      - "Operate drift-monitoring dashboard with defined thresholds (CTL-018)"
+      - "Track fairness metrics on a defined cadence (CTL-015)"
+      - "Quarterly HITL model review (CTL-016)"
+    due_date: "2026-12-15"
+    status: In Progress
+
+  - id: R-005
+    asset: AI-002
+    description: Underwriting model produces disparate impact against a protected class
+    inherent_likelihood: 3
+    inherent_impact: 5
+    inherent_score: 15
+    residual_likelihood: 2
+    residual_impact: 4
+    residual_score: 8
+    owner: Credit Risk
+    controls: [CTL-015, CTL-016, CTL-017]
+    treatment: Mitigate
+    treatment_actions:
+      - "Complete disparate-impact testing on current model version (CTL-015)"
+      - "Publish adverse-action rationale for all declines (CTL-017)"
+      - "Underwriter sign-off retained as HOTL control (CTL-016)"
+    due_date: "2026-11-15"
+    status: In Progress
+
+  - id: R-006
+    asset: AI-004
+    description: Third-party LLM copilot leaks customer PII through prompts sent to the external vendor
+    inherent_likelihood: 3
+    inherent_impact: 4
+    inherent_score: 12
+    residual_likelihood: 2
+    residual_impact: 3
+    residual_score: 6
+    owner: AI Governance / Vendor Risk
+    controls: [CTL-019, CTL-021, CTL-024, CTL-025]
+    treatment: Mitigate
+    treatment_actions:
+      - "Deploy PII scanning/redaction on prompts before vendor transmission (CTL-021)"
+      - "Confirm DPA terms restrict vendor training on Solidian Pay data (CTL-019)"
+      - "Record the vendor transfer in the disclosure register (CTL-025)"
+    due_date: "2026-10-31"
+    status: Not Started
+
+  - id: R-007
+    asset: AS-011
+    description: Foundation-model vendor deprecates or materially changes a model version without adequate notice, breaking production copilots
+    inherent_likelihood: 3
+    inherent_impact: 3
+    inherent_score: 9
+    residual_likelihood: 2
+    residual_impact: 2
+    residual_score: 4
+    owner: Vendor Risk Management
+    controls: [CTL-019, CTL-026, CTL-037]
+    treatment: Mitigate
+    treatment_actions:
+      - "Contractual deprecation-notice requirement (CTL-019)"
+      - "Maintain fallback/secondary model option for critical paths"
+      - "Assess vendor concentration risk at annual review (CTL-037)"
+    due_date: "2027-01-31"
+    status: Not Started
+
+  - id: R-008
+    asset: AS-010
+    description: Incomplete data lineage in the ML training pipeline obscures the source of biased or low-quality training data
+    inherent_likelihood: 3
+    inherent_impact: 4
+    inherent_score: 12
+    residual_likelihood: 2
+    residual_impact: 3
+    residual_score: 6
+    owner: Data Engineering
+    controls: [CTL-020]
+    treatment: Mitigate
+    treatment_actions:
+      - "Complete data lineage mapping for all production model training sets (CTL-020)"
+      - "Institute data quality sampling audits (CTL-020)"
+    due_date: "2026-12-31"
+    status: In Progress
+
+  - id: R-009
+    asset: AS-012
+    description: Incomplete or inaccurate transaction processing results in settlement breaks, duplicate or dropped payments, and breach of processing-integrity service commitments
+    inherent_likelihood: 4
+    inherent_impact: 5
+    inherent_score: 20
+    residual_likelihood: 2
+    residual_impact: 4
+    residual_score: 8
+    owner: Payment Operations
+    controls: [CTL-013, CTL-035, CTL-036]
+    treatment: Mitigate
+    treatment_actions:
+      - "Daily reconciliation between processing ledger and settlement records with documented sign-off (CTL-035)"
+      - "Automated input validation and file-completeness checks at batch ingestion (CTL-035)"
+      - "Exception queue aging thresholds with escalation to Payment Operations lead (CTL-035)"
+    due_date: "2026-12-01"
+    status: In Progress
+
+  - id: R-010
+    asset: AS-012
+    description: Processing capacity is exceeded during peak settlement windows, causing transactions to miss committed processing timelines
+    inherent_likelihood: 3
+    inherent_impact: 4
+    inherent_score: 12
+    residual_likelihood: 2
+    residual_impact: 3
+    residual_score: 6
+    owner: Site Reliability Engineering
+    controls: [CTL-027, CTL-031, CTL-035]
+    treatment: Mitigate
+    treatment_actions:
+      - "Capacity forecasting ahead of peak settlement windows (CTL-027)"
+      - "SLO alerting on processing latency against committed timelines (CTL-027)"
+      - "Communicate processing commitments and failure-reporting channel to merchants (CTL-031)"
+    due_date: "2027-01-15"
+    status: Not Started
+
+  - id: R-011
+    asset: AS-003
+    description: Personal information is disclosed to a third party without a documented legal basis or record of the disclosure
+    inherent_likelihood: 3
+    inherent_impact: 4
+    inherent_score: 12
+    residual_likelihood: 2
+    residual_impact: 3
+    residual_score: 6
+    owner: Legal / Privacy Office
+    controls: [CTL-022, CTL-025, CTL-026]
+    treatment: Mitigate
+    treatment_actions:
+      - "Maintain disclosure register covering all third-party PII disclosures (CTL-025)"
+      - "Transfer impact assessments and executed DPAs for US/Canada/UK flows (CTL-025)"
+      - "Privacy commitments embedded in vendor contracts at onboarding (CTL-026)"
+    due_date: "2026-12-20"
+    status: In Progress

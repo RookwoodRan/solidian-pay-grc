@@ -1,0 +1,149 @@
+# Solidian Pay — Asset Inventory
+# Source of truth. IDs referenced by data/risks.yaml and the workbook.
+
+schema_version: "2.0"
+
+assets:
+  - id: AS-001
+    name: Multicloud Environment (AWS + Azure)
+    description: Primary compute, storage, and networking for the payments platform and ML training/serving infrastructure.
+    category: Infrastructure
+    owner: Cloud Platform
+    classification: Confidential
+    threats: ["Misconfiguration", "Cross-cloud IAM drift", "API exposure", "Data leakage in transfer"]
+    vulnerabilities: ["Fragmented monitoring", "Over-permissioned service principals", "Weak cross-cloud segmentation"]
+    controls: [CTL-004, CTL-005, CTL-008, CTL-009, CTL-010]
+    inherent_risk: High
+    residual_risk: Medium
+
+  - id: AS-002
+    name: Edge / Perimeter Security Platform
+    description: CDN, WAF, DDoS mitigation, and Zero Trust access layer in front of customer-facing services.
+    category: Infrastructure
+    owner: Security Operations
+    classification: Confidential
+    threats: ["DNS hijacking", "DDoS", "WAF bypass", "Cert mismanagement"]
+    vulnerabilities: ["Over-permissive admin roles", "Missing TLS enforcement", "Logging retention gaps"]
+    controls: [CTL-004, CTL-008, CTL-010]
+    inherent_risk: High
+    residual_risk: Medium
+
+  - id: AS-003
+    name: Payroll & HR Systems
+    description: Employee payroll processing and HR records management.
+    category: Corporate IT
+    owner: HR / People Ops
+    classification: Restricted
+    threats: ["Insider misuse", "Unauthorized access", "Ransomware"]
+    vulnerabilities: ["Over-permissioned HR roles", "Insecure exports"]
+    controls: [CTL-004, CTL-010, CTL-012, CTL-024, CTL-030]
+    inherent_risk: High
+    residual_risk: Medium
+
+  - id: AS-004
+    name: Corporate Endpoints
+    description: Employee laptops and workstations across engineering, risk, compliance, and support functions.
+    category: Corporate IT
+    owner: IT Operations
+    classification: Internal
+    threats: ["Malware", "Device theft", "Phishing"]
+    vulnerabilities: ["Missing patches", "Inconsistent disk encryption"]
+    controls: [CTL-004, CTL-008, CTL-009, CTL-033, CTL-034]
+    inherent_risk: Medium
+    residual_risk: Low
+
+  - id: AS-005
+    name: CRM / Customer Data Platform
+    description: Customer relationship management and analytics platform holding merchant and cardholder-adjacent data.
+    category: Application
+    owner: Sales / Data
+    classification: Restricted
+    threats: ["Unauthorized access", "API exploitation", "Data leakage"]
+    vulnerabilities: ["Weak RBAC", "Insecure API tokens", "Unencrypted exports"]
+    controls: [CTL-004, CTL-010, CTL-024, CTL-028, CTL-039]
+    inherent_risk: High
+    residual_risk: Medium
+
+  - id: AS-006
+    name: Customer Website & Merchant Portal
+    description: Public-facing web application for customer and merchant account management.
+    category: Application
+    owner: Engineering
+    classification: Confidential
+    threats: ["Injection", "Session hijacking", "API exploitation"]
+    vulnerabilities: ["Insecure session management", "Misconfigured APIs"]
+    controls: [CTL-004, CTL-008, CTL-009, CTL-010, CTL-031, CTL-039]
+    inherent_risk: High
+    residual_risk: Medium
+
+  - id: AS-007
+    name: Physical Access / Badge System
+    description: Badge-based physical access control for office facilities.
+    category: Physical Security
+    owner: Facilities
+    classification: Internal
+    threats: ["Tailgating", "Badge cloning", "Lost badge misuse"]
+    vulnerabilities: ["Slow revocation", "Insufficient monitoring"]
+    controls: [CTL-004, CTL-010, CTL-032]
+    inherent_risk: Medium
+    residual_risk: Low
+
+  - id: AS-008
+    name: Backup & Recovery Infrastructure
+    description: Encrypted backup storage and restore tooling for databases, feature stores, and model artifacts.
+    category: Infrastructure
+    owner: IT Operations
+    classification: Confidential
+    threats: ["Ransomware", "Untested restores", "Unauthorized access"]
+    vulnerabilities: ["Insufficient retention", "Non-immutable backups"]
+    controls: [CTL-004, CTL-012]
+    inherent_risk: High
+    residual_risk: Medium
+
+  - id: AS-009
+    name: Network Firewalls & Security Appliances
+    description: Network boundary and segmentation devices across corporate and cloud environments.
+    category: Infrastructure
+    owner: Security Operations
+    classification: Confidential
+    threats: ["Intrusion", "Rule misconfiguration", "Firmware vulnerabilities"]
+    vulnerabilities: ["Outdated firmware", "Over-permissive rules"]
+    controls: [CTL-004, CTL-008, CTL-009, CTL-010]
+    inherent_risk: High
+    residual_risk: Medium
+
+  - id: AS-010
+    name: ML Training & Feature Store Platform
+    description: Data pipelines, feature store, and training infrastructure feeding the AI system inventory (see ai-systems.yaml).
+    category: AI / ML Infrastructure
+    owner: Data Engineering
+    classification: Restricted
+    threats: ["Data poisoning", "Training-data leakage", "Unauthorized model access"]
+    vulnerabilities: ["Incomplete data lineage", "Weak pipeline access controls"]
+    controls: [CTL-004, CTL-020, CTL-024, CTL-039]
+    inherent_risk: High
+    residual_risk: Medium
+
+  - id: AS-011
+    name: Third-Party Foundation Model APIs
+    description: External large-language-model APIs integrated into the customer support copilot and engineering copilot.
+    category: AI / ML Infrastructure
+    owner: AI Governance / Vendor Risk
+    classification: Confidential
+    threats: ["Prompt injection", "Data exfiltration via prompts", "Vendor outage/model deprecation"]
+    vulnerabilities: ["Limited vendor transparency", "No output filtering on early integrations"]
+    controls: [CTL-019, CTL-021, CTL-025]
+    inherent_risk: High
+    residual_risk: Medium
+
+  - id: AS-012
+    name: Payment Processing & Ledger Platform
+    description: Core transaction authorization, clearing, settlement and ledger system processing card and ACH payments for merchants.
+    category: Application
+    owner: Payment Operations
+    classification: Restricted
+    threats: ["Transaction duplication or loss", "Settlement break", "Unauthorized transaction injection", "Processing delay beyond SLA"]
+    vulnerabilities: ["Incomplete input validation on batch files", "Manual correction paths", "Reconciliation timing gaps"]
+    controls: [CTL-004, CTL-010, CTL-013, CTL-027, CTL-035, CTL-036, CTL-039]
+    inherent_risk: High
+    residual_risk: Medium
