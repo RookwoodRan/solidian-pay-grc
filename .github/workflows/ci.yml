@@ -72,7 +72,7 @@ jobs:
       - name: Install Python dependencies
         run: pip install pyyaml openpyxl
 
-      - name: Regenerate OSCAL and CSV exports
+      - name: Regenerate OSCAL and CSV exports and Pages Tables
         # SOURCE_DATE_EPOCH pins the OSCAL metadata timestamp to the commit
         # date, so regeneration is byte-reproducible and the diff below only
         # fires on a real content change.
@@ -80,15 +80,16 @@ jobs:
           export SOURCE_DATE_EPOCH="$(git log -1 --pretty=%ct)"
           python3 oscal/generate_oscal.py
           python3 scripts/export_csv.py
+          python3 scripts/export_md.py
 
       - name: Fail if committed artifacts differ from regenerated output
         run: |
           # The committed OSCAL timestamp reflects whenever it was last
           # generated locally, which is not the commit date, so exclude the
           # metadata timestamp from the comparison and diff everything else.
-          git diff --exit-code --stat -- exports/ || {
-            echo "::error::exports/ is stale; run scripts/export_csv.py and commit the result"
-            git diff -- exports/
+          git diff --exit-code --stat -- exports/ docs/ || {
+            echo "::error::exports/ or docs/ is stale; run scripts/export_csv.py and scripts/export_md.py, then commit the result"
+            git diff -- exports/ docs/
             exit 1
           }
           if ! git diff --quiet -- oscal/; then

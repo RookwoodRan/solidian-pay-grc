@@ -1,0 +1,17 @@
+---
+title: SOC 2 coverage
+---
+
+# SOC 2 coverage
+
+Coverage and average maturity per Trust Services category.
+
+*5 rows. Source: `exports/soc2-tsc-crosswalk.csv`.*
+
+| TSC Category | Crosswalk Rows | Distinct Criteria Referenced | Distinct Controls Contributing | Avg Control Maturity |
+|---|---|---|---|---|
+| Security (Common Criteria) | 48 | 33 | 26 | 3.27 |
+| Processing Integrity | 8 | 5 | 5 | 3.38 |
+| Availability | 4 | 3 | 3 | 3.75 |
+| Confidentiality | 2 | 2 | 2 | 3.0 |
+| Privacy | 23 | 18 | 10 | 2.65 |
