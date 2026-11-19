@@ -13,7 +13,7 @@ A unified GRC and AI-governance program for a fictional payments company: 39 con
 - [Framework crosswalk](crosswalk.md): find any clause and see which control satisfies it
 - [SOC 2 coverage](soc2-coverage.md): coverage per Trust Services category
 - [Case study](case-study.md): the narrative write-up
-- [Vendor RFI response](rfi-rfp/03-vendor-rfi-response.md): certification-body independence reasoning
+- [Procurement lifecycle](rfi-rfp/index.md): the RFI, RFP and vendor responses for selecting a certification body
 
 ## What this demonstrates
 - Multi-framework crosswalking where every mapping is defensible line by line
