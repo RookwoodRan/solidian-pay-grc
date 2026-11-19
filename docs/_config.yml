@@ -1,0 +1,11 @@
+title: Solidian Pay GRC
+description: Fictional fintech GRC and AI governance portfolio, built as controls-as-code
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
