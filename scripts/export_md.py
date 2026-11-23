@@ -134,15 +134,34 @@ def render_crosswalk(csv_name, out_name, title, intro):
     print(f"wrote docs/{out_name} ({len(body)} rows, {len(sections)} sections)")
 
 
-def render_heat_map(csv_name, out_name, title, intro):
-    """Render risk-heat-map.csv as a 5x5 Impact x Likelihood grid.
+# Same fill colors as the workbook's Heat Map Matrix sheet, so the
+# Pages version and the downloadable workbook look like the same
+# artifact, not two different color systems.
+HEAT_MAP_COLORS = {
+    "High": "#F4CCCC",
+    "Medium": "#FCE5CD",
+    "Low": "#D9EAD3",
+}
 
-    Same High/Medium/Low score bands as the workbook's Heat Map Matrix
-    sheet (score = likelihood x impact): High >= 15, Medium >= 8, else
-    Low, so the two never disagree on what counts as a high risk. Each
-    cell shows the risk count and, unlike the workbook's bare COUNTIFS
-    number, links the actual risk IDs so a reader doesn't have to
-    cross-reference the register to see what's driving a cell.
+
+def risk_level(score):
+    """Same bands as the workbook: High >= 15, Medium >= 8, else Low."""
+    if score >= 15:
+        return "High"
+    if score >= 8:
+        return "Medium"
+    return "Low"
+
+
+def render_heat_map(csv_name, out_name, title, intro):
+    """Render risk-heat-map.csv as a colored 5x5 Impact x Likelihood grid.
+
+    Every cell is shaded by its score's risk level, whether or not a
+    risk currently sits there, so the grid reads as the classic
+    red/amber/green zones a reader expects from a heat map. Cells with
+    risks in them show the count; a legend below the grid lists which
+    risk IDs sit where, so detail moves out of the cells (where it was
+    cramped and wrapped) into something scannable on its own line.
     """
     src = ROOT / "exports" / csv_name
     with src.open(newline="", encoding="utf-8") as handle:
@@ -152,9 +171,9 @@ def render_heat_map(csv_name, out_name, title, intro):
     for impact, likelihood, score, level, count, ids in (
         (r[0], r[1], r[2], r[3], int(r[4]), r[5]) for r in rows[1:]
     ):
-        by_cell[(int(impact), int(likelihood))] = (score, level, count, ids)
+        by_cell[(int(impact), int(likelihood))] = (int(score), count, ids)
 
-    total = sum(c for *_, c, _ in by_cell.values())
+    total = sum(c for c, _ in ((v[1], v[2]) for v in by_cell.values()))
     lines = [
         "---",
         f"title: {title}",
@@ -167,23 +186,42 @@ def render_heat_map(csv_name, out_name, title, intro):
         f"*{total} risks plotted by inherent likelihood and impact. "
         f"Source: `exports/{csv_name}`.*",
         "",
-        "| Impact \\ Likelihood | 1 | 2 | 3 | 4 | 5 |",
-        "|---|---|---|---|---|---|",
+        '<table>',
+        "<tr><th>Impact \\ Likelihood</th>"
+        + "".join(f"<th>{n}</th>" for n in range(1, 6))
+        + "</tr>",
     ]
+    legend = []
     for impact in range(5, 0, -1):
-        row_cells = [f"**{impact}**"]
+        row = [f"<th>{impact}</th>"]
         for likelihood in range(1, 6):
-            score, level, count, ids = by_cell[(impact, likelihood)]
-            if count == 0:
-                row_cells.append("—")
-            else:
-                row_cells.append(f"{level} ({score}): {count} — {cell(ids)}")
-        lines.append("| " + " | ".join(row_cells) + " |")
+            score, count, ids = by_cell[(impact, likelihood)]
+            color = HEAT_MAP_COLORS[risk_level(score)]
+            label = str(count) if count else ""
+            row.append(
+                f'<td style="background-color:{color}; '
+                f'text-align:center;">{label}</td>'
+            )
+            if count:
+                legend.append((score, impact, likelihood, ids))
+        lines.append("<tr>" + "".join(row) + "</tr>")
+    lines.append("</table>")
+
     lines += [
         "",
-        "Score = Likelihood x Impact. **High** (score >= 15) · "
-        "**Medium** (score >= 8) · **Low** (below 8) — same bands "
+        "Score = Likelihood x Impact. **High** (score 15 or above), "
+        "**Medium** (score 8 to 14), **Low** (below 8): same bands "
         "used in the downloadable workbook's Heat Map Matrix sheet.",
+        "",
+        "**Where each risk lands:**",
+        "",
+    ]
+    for score, impact, likelihood, ids in sorted(legend, reverse=True):
+        lines.append(
+            f"- Impact {impact}, Likelihood {likelihood} "
+            f"(score {score}): {cell(ids)}"
+        )
+    lines += [
         "",
         "For treatment plans and residual scoring per risk, see the "
         "[risk register](risks.md).",
