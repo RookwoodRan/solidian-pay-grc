@@ -10,7 +10,7 @@ A unified GRC and AI-governance program for a fictional payments company: 39 con
 
 ## Start here (ten minutes)
 - [Control library](controls.md): every control, owner, status and maturity
-- [Framework crosswalk](crosswalk.md): find any clause and see which control satisfies it
+- [Framework crosswalk](crosswalk.md): find any clause and see which control satisfies it, grouped by framework
 - [SOC 2 coverage](soc2-coverage.md): coverage per Trust Services category
 - [Case study](case-study.md): the narrative write-up
 - [Procurement lifecycle](rfi-rfp/index.md): the RFI, RFP and vendor responses for selecting a certification body

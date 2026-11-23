@@ -93,7 +93,11 @@ def main() -> None:
                     c["implementation_status"], c["control_maturity"],
                     c["evidence_maturity"],
                 ])
-    crosswalk.sort(key=lambda r: (r[0], r[1], r[3]))
+    # Sort by framework in FRAMEWORK_LABELS order (SOC 2 first, matching
+    # the column order already used in control-library.csv) rather than
+    # alphabetically by label, which buries SOC 2 behind ISO and NIST.
+    label_rank = {label: i for i, label in enumerate(FRAMEWORK_LABELS.values())}
+    crosswalk.sort(key=lambda r: (label_rank[r[0]], r[1], r[3]))
     write(
         "framework-crosswalk.csv",
         ["Standard", "Clause / Criterion", "SOC 2 TSC Category", "Control ID",
