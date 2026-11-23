@@ -145,6 +145,39 @@ def main() -> None:
          for r in risks],
     )
 
+    # Inherent risk heat map: Impact x Likelihood grid, each cell listing
+    # the risks that land there. Same High/Medium/Low score bands as the
+    # workbook's Heat Map Matrix sheet (score = likelihood x impact):
+    # High >= 15, Medium >= 8, else Low. Keeping the bands identical means
+    # the Pages page and the downloadable workbook never disagree on what
+    # counts as a high risk.
+    def risk_level(score: int) -> str:
+        if score >= 15:
+            return "High"
+        if score >= 8:
+            return "Medium"
+        return "Low"
+
+    heat_map = []
+    for impact in range(5, 0, -1):
+        for likelihood in range(1, 6):
+            cell_risks = [
+                r for r in risks
+                if r.get("inherent_likelihood") == likelihood
+                and r.get("inherent_impact") == impact
+            ]
+            heat_map.append([
+                impact, likelihood, impact * likelihood,
+                risk_level(impact * likelihood),
+                len(cell_risks),
+                "; ".join(r["id"] for r in cell_risks),
+            ])
+    write(
+        "risk-heat-map.csv",
+        ["Impact", "Likelihood", "Score", "Level", "Risk Count", "Risk IDs"],
+        heat_map,
+    )
+
     write(
         "ai-system-inventory.csv",
         ["System ID", "Name", "Purpose", "Model Type", "Risk Level",

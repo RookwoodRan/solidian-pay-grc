@@ -21,6 +21,15 @@ PAGES = [
         "SOC 2 coverage",
         "Coverage and average maturity per Trust Services category.",
     ),
+    (
+        "risk-register.csv",
+        "risks.md",
+        "Risk register",
+        "Every tracked risk with inherent and residual scoring, "
+        "owner, treatment and mapped controls. Generated from "
+        "data/risks.yaml. For a visual rollup see the "
+        "[risk heat map](risk-heat-map.md).",
+    ),
 ]
 
 
@@ -125,6 +134,66 @@ def render_crosswalk(csv_name, out_name, title, intro):
     print(f"wrote docs/{out_name} ({len(body)} rows, {len(sections)} sections)")
 
 
+def render_heat_map(csv_name, out_name, title, intro):
+    """Render risk-heat-map.csv as a 5x5 Impact x Likelihood grid.
+
+    Same High/Medium/Low score bands as the workbook's Heat Map Matrix
+    sheet (score = likelihood x impact): High >= 15, Medium >= 8, else
+    Low, so the two never disagree on what counts as a high risk. Each
+    cell shows the risk count and, unlike the workbook's bare COUNTIFS
+    number, links the actual risk IDs so a reader doesn't have to
+    cross-reference the register to see what's driving a cell.
+    """
+    src = ROOT / "exports" / csv_name
+    with src.open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.reader(handle))
+    # Columns: Impact, Likelihood, Score, Level, Risk Count, Risk IDs
+    by_cell = {}
+    for impact, likelihood, score, level, count, ids in (
+        (r[0], r[1], r[2], r[3], int(r[4]), r[5]) for r in rows[1:]
+    ):
+        by_cell[(int(impact), int(likelihood))] = (score, level, count, ids)
+
+    total = sum(c for *_, c, _ in by_cell.values())
+    lines = [
+        "---",
+        f"title: {title}",
+        "---",
+        "",
+        f"# {title}",
+        "",
+        intro,
+        "",
+        f"*{total} risks plotted by inherent likelihood and impact. "
+        f"Source: `exports/{csv_name}`.*",
+        "",
+        "| Impact \\ Likelihood | 1 | 2 | 3 | 4 | 5 |",
+        "|---|---|---|---|---|---|",
+    ]
+    for impact in range(5, 0, -1):
+        row_cells = [f"**{impact}**"]
+        for likelihood in range(1, 6):
+            score, level, count, ids = by_cell[(impact, likelihood)]
+            if count == 0:
+                row_cells.append("—")
+            else:
+                row_cells.append(f"{level} ({score}): {count} — {cell(ids)}")
+        lines.append("| " + " | ".join(row_cells) + " |")
+    lines += [
+        "",
+        "Score = Likelihood x Impact. **High** (score >= 15) · "
+        "**Medium** (score >= 8) · **Low** (below 8) — same bands "
+        "used in the downloadable workbook's Heat Map Matrix sheet.",
+        "",
+        "For treatment plans and residual scoring per risk, see the "
+        "[risk register](risks.md).",
+    ]
+    content = "\n".join(lines) + "\n"
+    target = OUT / out_name
+    target.write_text(content, encoding="utf-8", newline="\n")
+    print(f"wrote docs/{out_name} ({total} risks)")
+
+
 if __name__ == "__main__":
     for page in PAGES:
         render(*page)
@@ -135,4 +204,12 @@ if __name__ == "__main__":
         "Which control satisfies which clause, grouped by framework. "
         "Jump to one below, or use your browser's find (Ctrl+F / "
         "Cmd+F) to search any clause ID.",
+    )
+    render_heat_map(
+        "risk-heat-map.csv",
+        "risk-heat-map.md",
+        "Risk heat map",
+        "Inherent risk plotted by likelihood and impact. For "
+        "residual scoring and treatment status per risk, see the "
+        "[risk register](risks.md).",
     )

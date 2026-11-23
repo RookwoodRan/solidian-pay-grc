@@ -12,6 +12,8 @@ A unified GRC and AI-governance program for a fictional payments company: 39 con
 - [Control library](controls.md): every control, owner, status and maturity
 - [Framework crosswalk](crosswalk.md): find any clause and see which control satisfies it, grouped by framework
 - [SOC 2 coverage](soc2-coverage.md): coverage per Trust Services category
+- [Risk register](risks.md): every risk with inherent/residual scoring, owner and treatment
+- [Risk heat map](risk-heat-map.md): inherent risk by likelihood and impact
 - [Case study](case-study.md): the narrative write-up
 - [Procurement lifecycle](rfi-rfp/index.md): the RFI, RFP and vendor responses for selecting a certification body
 
