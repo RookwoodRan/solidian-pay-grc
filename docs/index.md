@@ -17,6 +17,11 @@ A unified GRC and AI-governance program for a fictional payments company: 39 con
 - [Case study](case-study.md): the narrative write-up
 - [Procurement lifecycle](rfi-rfp/index.md): the RFI, RFP and vendor responses for selecting a certification body
 
+## Reference data
+- [Asset inventory](assets.md): every tracked asset with owner, classification and mapped controls
+- [AI system inventory](ai-systems.md): every AI system with risk level, human oversight and mapped controls
+- [Maturity rubric](maturity-rubric.md): what each maturity score (1 to 5) actually means
+
 ## What this demonstrates
 - Multi-framework crosswalking where every mapping is defensible line by line
 - GRC engineering practices at the design layer: one source of truth, generated artifacts, validated references, and CI that fails on drift

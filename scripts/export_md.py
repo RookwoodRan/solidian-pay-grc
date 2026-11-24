@@ -30,6 +30,31 @@ PAGES = [
         "data/risks.yaml. For a visual rollup see the "
         "[risk heat map](risk-heat-map.md).",
     ),
+    (
+        "asset-inventory.csv",
+        "assets.md",
+        "Asset inventory",
+        "Every tracked asset with owner, classification and "
+        "mapped controls. Generated from data/assets.yaml.",
+    ),
+    (
+        "ai-system-inventory.csv",
+        "ai-systems.md",
+        "AI system inventory",
+        "Every AI system with purpose, risk level, human "
+        "oversight and mapped controls. Generated from "
+        "data/ai-systems.yaml.",
+    ),
+    (
+        "maturity-rubric.csv",
+        "maturity-rubric.md",
+        "Maturity rubric",
+        "What each control and evidence maturity level (1 to 5) "
+        "actually means. Referenced by the maturity scores shown "
+        "on the [control library](controls.md) and "
+        "[risk register](risks.md). Generated from "
+        "data/maturity-rubric.yaml.",
+    ),
 ]
 
 

@@ -62,6 +62,7 @@ def main() -> None:
     assets = load("assets.yaml", "assets")
     ai_systems = load("ai-systems.yaml", "ai_systems")
     risks = load("risks.yaml", "risks")
+    maturity = yaml.safe_load((DATA / "maturity-rubric.yaml").read_text())
 
     print("Writing CSV exports:")
 
@@ -81,6 +82,17 @@ def main() -> None:
           " ".join(c["description"].split()),
           c["evidence_required"], c.get("notes") or ""]
          for c in controls],
+    )
+
+    write(
+        "maturity-rubric.csv",
+        ["Dimension", "Level", "Label", "Description"],
+        [
+            [dimension.replace("_", " ").title(), level, info["label"],
+             info["description"]]
+            for dimension in ("control_maturity", "evidence_maturity")
+            for level, info in maturity[dimension].items()
+        ],
     )
 
     crosswalk = []
